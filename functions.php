@@ -224,7 +224,12 @@ function dart_scripts() {
 	if ( has_nav_menu( 'menu-1' ) ) {
 		wp_enqueue_script( 'dart-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.1', true );
 		wp_enqueue_script( 'dart-touch-navigation', get_theme_file_uri( '/js/touch-keyboard-navigation.js' ), array(), '1.1', true );
-	}
+    }
+
+    function add_google_fonts() {
+        wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' );
+    }
+
 
     wp_enqueue_style( 'dart-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
@@ -244,6 +249,7 @@ function dart_scripts() {
     wp_enqueue_script( 'dart-script-wow', get_template_directory_uri() . '/assets/js/wow.min.js','','1',true);
     wp_enqueue_script( 'dart-script-paroller', get_template_directory_uri() . '/assets/js/jquery.paroller.min.js','','1',true);
     wp_enqueue_script( 'dart-scripts', get_template_directory_uri() . '/assets/js/scripts.js','','1',true);
+
 
 
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
