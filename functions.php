@@ -257,13 +257,8 @@ function dart_scripts() {
 
 
 
-
-
-
-
-
 }
-add_action( 'wp_enqueue_scripts', 'dart_scripts' );
+add_action( 'wp_enqueue_scripts', 'dart_scripts', 'add_google_fonts' );
 
 /**
  * Fix skip link focus in IE11.
