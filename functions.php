@@ -54,13 +54,6 @@ if ( ! function_exists( 'dart_setup' ) ) :
 		set_post_thumbnail_size( 1568, 9999 );
 
 		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus(
-			array(
-				'menu-1' => __( 'Primary', 'dart' ),
-				'footer' => __( 'Footer Menu', 'dart' ),
-				'social' => __( 'Social Links Menu', 'dart' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -343,6 +336,7 @@ register_nav_menus(array(
 
 // Для полноэкранного меню
 	'full_nav_1'    => 'Основное меню (Шапка)',
-	'full_nav_2'    => 'Меню #2 (Все курсы)',
+	'full_nav_2'    => 'Меню #2',
+	'full_nav_3'    => 'Меню #3',
 // Для полноэкранного меню
 ));
