@@ -340,3 +340,37 @@ register_nav_menus(array(
 	'full_nav_3'    => 'Меню #3',
 // Для полноэкранного меню
 ));
+
+
+
+
+function true_apply_categories_for_pages(){
+	add_meta_box( 'categorydiv', 'Категории', 'post_categories_meta_box', 'page', 'side', 'normal'); // добавляем метабокс категорий для страниц
+	register_taxonomy_for_object_type('category', 'page'); // регистрируем рубрики для страниц
+}
+// обязательно вешаем на admin_init
+add_action('admin_init','true_apply_categories_for_pages');
+
+function true_expanded_request_category($q) {
+	if (isset($q['category_name'])) // если в запросе присутствует параметр рубрики
+		$q['post_type'] = array('post', 'page'); // то, помимо записей, выводим также и страницы
+	return $q;
+}
+
+add_filter('request', 'true_expanded_request_category');
+
+
+function true_apply_tags_for_pages(){
+	add_meta_box( 'tagsdiv-post_tag', 'Теги', 'post_tags_meta_box', 'page', 'side', 'normal' ); // сначала добавляем метабокс меток
+	register_taxonomy_for_object_type('post_tag', 'page'); // затем включаем их поддержку страницами wp
+}
+
+add_action('admin_init','true_apply_tags_for_pages');
+
+function true_expanded_request_post_tags($q) {
+	if (isset($q['tag'])) // если в запросе присутствует параметр метки
+		$q['post_type'] = array('post', 'page');
+	return $q;
+}
+
+add_filter('request', 'true_expanded_request_post_tags');
