@@ -62,7 +62,7 @@
                 'after'           => '',
                 'link_before'     => '',
                 'link_after'      => '',
-                // 'walker'          => new Menu_Item_Custom_Fields_Walker()
+                'walker'          => new Menu_Item_Custom_Fields_Walker(),
             ) );
             ?>
         </ul>
