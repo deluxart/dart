@@ -68,8 +68,9 @@ class WPB_Custom_Walker extends Walker {
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
-                $item->datacontent = get_post_meta( $item->ID, '_menu_item_field_description', true );
+        $classes[] = 'menu-item-' . $item->ID;
+
+        $item->datacontent = get_post_meta( $item->ID, '_menu_item_field_description', true );
 		/**
 		 * Filters the arguments for a single nav menu item.
 		 *
