@@ -58,12 +58,12 @@
                 'items_wrap'      => '%3$s',
                 'depth'           => 0,
                 'echo'            => true,
-                // 'before'          => '',
-                // 'after'           => '',
-                // 'link_before'     => '',
-                // 'link_after'      => '',
-                // 'walker'          => '',
-                //   'walker_nav_menu_start_el'          => '',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'walker'          => new Menu_Item_Custom_Fields_Walker(),
+                'walker_nav_menu_start_el'          => '',
             ) );
             ?>
         </ul>
