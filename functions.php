@@ -205,13 +205,16 @@ $my_taxonomies_array = array('post','page');
  $wp_query->set( 'post_type', $my_taxonomies_array );
 }
 
-add_filter( 'nav_menu_link_attributes', 'wpse_100726_extra_atts', 10, 3 );
 
-function wpse_100726_extra_atts( $atts, $item, $args )
-{
-    // inspect $item, then …
-    $atts['custom'] = 'some value';
-    $atts['data-toggle'] = 'tooltip';
-    $atts['data-original-title'] ='about';
+
+
+
+
+
+add_filter( 'nav_menu_link_attributes', 'wpse260933_menu_atts_filter', 10, 3 );
+function wpse260933_menu_atts_filter( $atts, $item, $args ) {
+    if( in_array( 'current-menu-item', $item->classes ) ) {
+        $atts['aria-current'] = 'page';
+    }
     return $atts;
 }
