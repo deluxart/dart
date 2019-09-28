@@ -206,10 +206,16 @@ $my_taxonomies_array = array('post','page');
 }
 
 
-add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
-    if ( 'target-foobox' === $item->classes[0] ) {
-        $atts['target'] = 'foobox';
-    }
+add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
+function my_nav_menu_attribs( $atts, $item, $args )
+{
+  // The ID of the target menu item
+  $menu_target = 365;
 
-    return $atts;
-}, 10, 3 );
+  // inspect $item
+  if ($item->ID == $menu_target) {
+    $atts['data-reveal-id'] = 'myModal1';
+    $atts['data-animation'] = 'fade';
+  }
+  return $atts;
+}
