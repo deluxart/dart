@@ -69,6 +69,17 @@
         </ul>
 
 
+	<nav id="menu" class="nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<?php wp_nav_menu(
+			array(
+				'theme_location' => 'primary',
+				'container'	 => false,
+				'menu_id'	 => '9',
+				'fallback_cb'	 => '',
+				"walker"	 => new Drop_Menu_Walker(),
+			)
+		); ?>
+        </nav>
 
 
 
