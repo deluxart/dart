@@ -221,7 +221,7 @@ function my_wp_nav_menu_objects( $items, $args ) {
 		// append icon
 		if( $data_wow_delay ) {
 
-			$item->$atts['data-wow-delay'] .= .$data_wow_delay.;
+			$item->title .= ' <i class="fa fa-'.$icon.'"></i>';
 
 		}
 
