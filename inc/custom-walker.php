@@ -1,5 +1,4 @@
 <?php
-// Copied from /wp-includes/class-walker-nav-menu.php into your theme and referenced in functions.php
 class WPB_Custom_Walker extends Walker {
         /**
 	 * What the class handles.
@@ -70,6 +69,7 @@ class WPB_Custom_Walker extends Walker {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
+                $item->datacontent = get_post_meta( $item->ID, '_menu_item_field_description', true );
 		/**
 		 * Filters the arguments for a single nav menu item.
 		 *
@@ -105,9 +105,8 @@ class WPB_Custom_Walker extends Walker {
 		 * @param int    $depth   Depth of menu item. Used for padding.
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-         $output .= $indent . '<li' . $attributes . $id . $class_names . 'data-content="' . $item->datacontent . '">';
-		// $output .= $indent . '<li' . $attributes . $id . $class_names .' data-content="blah">';
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+		$output .= $indent . '<li' . $attributes . $id . $class_names . 'data-content="' . $item->datacontent . '">';
 		$atts = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
