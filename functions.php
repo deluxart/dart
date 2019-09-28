@@ -231,3 +231,67 @@ $my_taxonomies_array = array('post','page');
 
 // require_once dirname( __FILE__ ) . '/inc/menu-item-custom-fields-example.php';
 require_once dirname( __FILE__ ) . '/menu-item-custom-fields/menu-item-custom-fields.php';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Placement of new menu
+add_action( 'genesis_before_loop', 'themprefix_walker_menu' );
+/**
+ * Add in Walker Menu
+ *
+ * @package   Genesis Walker Menu
+ * @author    Neil Gee
+ * @link      http://wpbeaches.com/adding-data-attribute-menu-list-item-via-walker-class/
+ * @copyright (c)2016, Neil Gee
+ */
+// New menu
+function themprefix_walker_menu () {
+ 	$args = array(
+		'theme_location'  => 'tertiary',
+ 		'container'       => 'nav',
+		'container_class' => 'walker-menu-container',
+		'menu_class'      => 'wrap menu genesis-nav-menu menu-tertiary',
+		'depth'           => 0, //change to 1 for no submenu levels
+		'walker'	  => new WPB_Custom_Walker // calling in the custom walker menu as in theme inc/custom-walker.php
+		);
+	wp_nav_menu( $args );
+}
+// Genesis support for extra menu
+add_theme_support ( 'genesis-menus' , array (
+                                      'primary'   => 'Primary Navigation Menu' ,
+                                      'secondary' => 'Secondary Navigation Menu' ,
+                                      'tertiary'  => 'Walker Navigation Menu'
+                             	      )
+		  );
+// Bring in my custom walker class - filed in my themes inc/
+require_once dirname( __FILE__ ) . '/inc/custom-walker.php';

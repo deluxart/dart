@@ -62,7 +62,7 @@
                 'after'           => '',
                 'link_before'     => '',
                 'link_after'      => '',
-                'walker'          => new WPB_Custom_Walker
+                // 'walker'          => new WPB_Custom_Walker
             ) );
             ?>
         </ul>
