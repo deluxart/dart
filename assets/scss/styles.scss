@@ -54,35 +54,35 @@ button {
 }
 
 #nav-icon {
-	width: 20px; 
-	height: 18px; 
-	position: relative; 
-	margin: 0px auto; 
-	-webkit-transform: rotate(0deg); 
-	-moz-transform: rotate(0deg); 
-	-o-transform: rotate(0deg); 
-	transform: rotate(0deg); 
-	-webkit-transition: .5s ease-in-out; 
-	-moz-transition: .5s ease-in-out; 
-	-o-transition: .5s ease-in-out; 
-	transition: .5s ease-in-out; 
+	width: 20px;
+	height: 18px;
+	position: relative;
+	margin: 0px auto;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
 	cursor: pointer;
 
 	span {
-		display: block; 
-		position: absolute; 
-		height: 2px; 
-		width: 100%; 
-		background: #000; 
-		border-radius: 9px; 
-		opacity: 1; left: 0; 
-		-webkit-transform: rotate(0deg); 
-		-moz-transform: rotate(0deg); 
-		-o-transform: rotate(0deg); 
-		transform: rotate(0deg); 
-		-webkit-transition: .25s ease-in-out; 
-		-moz-transition: .25s ease-in-out; 
-		-o-transition: .25s ease-in-out; 
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: #000;
+		border-radius: 9px;
+		opacity: 1; left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: .25s ease-in-out;
+		-moz-transition: .25s ease-in-out;
+		-o-transition: .25s ease-in-out;
 		transition: .25s ease-in-out;
 
 			&:nth-child(1) {
@@ -111,31 +111,31 @@ button {
 	&.open {
 		z-index: 100;
 		/*padding: 10px 0;*/
-		
+
 		span {
 			&:nth-child(1) {
-				top: 8px; 
-				width: 0%; 
+				top: 8px;
+				width: 0%;
 				left: 50%;
 			}
 
 			&:nth-child(2) {
-				-webkit-transform: rotate(45deg); 
-				-moz-transform: rotate(45deg); 
-				-o-transform: rotate(45deg); 
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
 				transform: rotate(45deg);
 			}
 
 			&:nth-child(3) {
-				-webkit-transform: rotate(-45deg); 
-				-moz-transform: rotate(-45deg); 
-				-o-transform: rotate(-45deg); 
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
 				transform: rotate(-45deg);
 			}
 
 			&:nth-child(4) {
-				top: 8px; 
-				width: 0%; 
+				top: 8px;
+				width: 0%;
 				left: 50%;
 			}
 		}
@@ -263,15 +263,17 @@ section {
 }
 
 header {
-	background: #fff;
-	border-bottom: 1px solid #eeeeee;
-	padding: 21px 0;
-	font-size: 14px;
-	/*transition: 0.3s all;*/
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 999;
+    &#header {
+        background: #fff;
+        border-bottom: 1px solid #eeeeee;
+        padding: 21px 0;
+        font-size: 14px;
+        /*transition: 0.3s all;*/
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
 
 	&.header-fixed {
 		box-shadow: 0px 0px 28px #00000026;
@@ -319,7 +321,7 @@ header {
 #home_slider {
 	position: relative;
 	padding: 50px 0;
-	
+
 	.home_slider {
 		position: relative;
 	}
@@ -334,7 +336,7 @@ header {
 		align-items: center;*/
 		text-align: center;
 
-		& > div { 
+		& > div {
 			position: absolute;
 			top: 50%;
 			left: 0;
@@ -740,7 +742,7 @@ header {
 						position: relative;
 
 						form {
-							box-shadow: 6px 13px 57px 0px rgba(0, 0, 0, 0.06); 
+							box-shadow: 6px 13px 57px 0px rgba(0, 0, 0, 0.06);
 							background: #fff;
 							padding: 50px;
 							position: relative;
@@ -867,7 +869,7 @@ footer {
 
 		& > div {
 			&:nth-child(2) {
-				text-align: right; 
+				text-align: right;
 			}
 
 			ul {
@@ -932,7 +934,7 @@ footer {
 	    display: flex;
 	    -webkit-box-align: center;
 	    -ms-flex-align: center;
-	    align-items: center;   
+	    align-items: center;
 	    -webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	    justify-content: center;

@@ -27,7 +27,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header>
+<header id="header">
 	<div class="container">
 		<div><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
 			<!-- <img src="images/logo.svg" class="logo" alt="DELUX-Art"> -->
