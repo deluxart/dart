@@ -205,17 +205,17 @@ $my_taxonomies_array = array('post','page');
  $wp_query->set( 'post_type', $my_taxonomies_array );
 }
 
-
-add_filter( 'nav_menu_link_attributes', 'my_nav_menu_attribs', 10, 3 );
-function my_nav_menu_attribs( $atts, $item, $args )
+add_filter( 'nav_menu_link_attributes', 'about_nav_menu_attributes', 10, 3 );
+function about_nav_menu_attributes( $atts, $item, $args )
 {
   // The ID of the target menu item
-  $menu_target = 365;
+  $menu_target = 10;
 
   // inspect $item
   if ($item->ID == $menu_target) {
-    $atts['data-reveal-id'] = 'myModal1';
-    $atts['data-animation'] = 'fade';
+    $atts['class'] = 'highlight';
+    $atts['data-toggle'] = 'tooltip';
+    $atts['data-original-title'] ='about';
   }
-  return $atts;
+return $atts;
 }
