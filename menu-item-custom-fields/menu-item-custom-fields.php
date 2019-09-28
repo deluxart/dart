@@ -58,4 +58,4 @@ if ( ! class_exists( 'Menu_Item_Custom_Fields' ) ) :
 endif; // class_exists( 'Menu_Item_Custom_Fields' )
 
 // Uncomment the following line to test this plugin
-#require_once dirname( __FILE__ ) . '/doc/menu-item-custom-fields-example.php';
+require_once dirname( __FILE__ ) . '/doc/menu-item-custom-fields-example.php';
