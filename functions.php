@@ -229,5 +229,5 @@ $my_taxonomies_array = array('post','page');
 // }
 
 
-// require_once dirname( __FILE__ ) . '/inc/menu-item-custom-fields-example.php';
+require_once dirname( __FILE__ ) . '/inc/menu-item-custom-fields-example.php';
 

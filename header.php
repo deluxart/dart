@@ -52,7 +52,18 @@
         <ul class="menu">
            <?php
             wp_nav_menu( array(
-                'menu'            => '0',
+                'menu'            => '0b',
+                'container'       => false,
+                'echo'            => false,
+                'items_wrap'      => '%3$s',
+                'depth'           => 0,
+                'echo'            => true,
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'walker'          => '',
+                  'walker_nav_menu_start_el'          => '',
             ) );
             ?>
         </ul>
