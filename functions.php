@@ -126,7 +126,8 @@ function delux_art_scripts() {
 	wp_enqueue_style( 'dart-reset', get_template_directory_uri() . '/assets/css/reset.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-glich', get_template_directory_uri() . '/assets/css/glich.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-fa', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), wp_get_theme()->get( 'Version' ) );
-    wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
+    // wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-animate', get_template_directory_uri() . '/assets/css/animate.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-menu', get_template_directory_uri() . '/assets/css/dart-menu.css', array(), wp_get_theme()->get( 'Version' ) );
 
