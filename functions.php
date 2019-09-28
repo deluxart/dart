@@ -204,3 +204,12 @@ $my_taxonomies_array = array('post','page');
  if ( $wp_query->get( 'tag' ) )
  $wp_query->set( 'post_type', $my_taxonomies_array );
 }
+
+
+add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
+    if ( 'target-foobox' === $item->classes[0] ) {
+        $atts['target'] = 'foobox';
+    }
+
+    return $atts;
+}, 10, 3 );
