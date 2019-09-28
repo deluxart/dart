@@ -46,29 +46,6 @@
 	</div>
 </header>
 
-
-
-
-        <ul class="menu">
-           <?php
-            wp_nav_menu( array(
-                'menu'            => '9',
-                'container'       => false,
-                'items_wrap'      => '%3$s',
-                'depth'           => 0,
-                'echo'            => true,
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'walker'          => new WPB_Custom_Walker
-            ) );
-            ?>
-        </ul>
-
-
-
-
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'delux-art' ); ?></a>
 	<header id="masthead" class="site-header">
