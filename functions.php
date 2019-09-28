@@ -295,3 +295,4 @@ add_theme_support ( 'genesis-menus' , array (
 		  );
 // Bring in my custom walker class - filed in my themes inc/
 require_once dirname( __FILE__ ) . '/inc/custom-walker.php';
+require_once dirname( __FILE__ ) . '/inc/menu-item-custom-fields.php';
