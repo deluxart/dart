@@ -210,11 +210,25 @@ $my_taxonomies_array = array('post','page');
 
 
 
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+function my_wp_nav_menu_objects( $items, $args ) {
 
-add_filter( 'nav_menu_link_attributes', 'wpse260933_menu_atts_filter', 10, 3 );
-function wpse260933_menu_atts_filter( $atts, $item, $args ) {
-    if( in_array( 'current-menu-item', $item->classes ) ) {
-        $atts['aria-current'] = 'page';
-    }
-    return $atts;
+	// loop
+	foreach( $items as &$item ) {
+		// vars
+        $data_wow_delay = get_field('data-wow-delay', $item);
+
+		// append icon
+		if( $data_wow_delay ) {
+
+			$item->$atts['data-wow-delay'] .= .$data_wow_delay.;
+
+		}
+
+	}
+
+
+	// return
+	return $items;
+
 }
