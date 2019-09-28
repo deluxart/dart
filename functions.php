@@ -266,4 +266,4 @@ add_theme_support ( 'genesis-menus' , array (
 
 
 // Bring in my custom walker class - filed in my themes inc/
-require_once dirname( __FILE__ ) . '/inc/extend-walker-class.php';
+require_once dirname( __FILE__ ) . '/inc/menu-items.php';
