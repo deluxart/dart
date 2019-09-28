@@ -62,8 +62,7 @@
                 'after'           => '',
                 'link_before'     => '',
                 'link_after'      => '',
-                'walker'          => new Menu_Item_Custom_Fields_Walker(),
-                'walker_nav_menu_start_el'          => '',
+                'walker'          => new Menu_Item_Custom_Fields_Walker()
             ) );
             ?>
         </ul>
