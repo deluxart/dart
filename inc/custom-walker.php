@@ -105,8 +105,9 @@ class WPB_Custom_Walker extends Walker {
 		 * @param int    $depth   Depth of menu item. Used for padding.
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
-		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-		$output .= $indent . '<li' . $attributes . $id . $class_names .' data-content="blah">';
+        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+         $output .= $indent . '<li' . $attributes . $id . $class_names . 'data-content="' . $item->datacontent . '">';
+		// $output .= $indent . '<li' . $attributes . $id . $class_names .' data-content="blah">';
 		$atts = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
