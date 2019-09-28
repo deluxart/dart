@@ -1,34 +1,6 @@
 <?php
-/**
- * Menu item custom fields example
- *
- * Copy this file into your wp-content/mu-plugins directory.
- *
- * @package Menu_Item_Custom_Fields_Example
- * @version 0.2.0
- * @author Dzikri Aziz <kvcrvt@gmail.com>
- *
- *
- * Plugin name: Menu Item Custom Fields Example
- * Plugin URI: https://github.com/kucrut/wp-menu-item-custom-fields
- * Description: Example usage of Menu Item Custom Fields in plugins/themes
- * Version: 0.2.0
- * Author: Dzikri Aziz
- * Author URI: http://kucrut.org/
- * License: GPL v2
- * Text Domain: menu-item-custom-fields-example
- */
-
-
-/**
- * Sample menu item metadata
- *
- * This class demonstrate the usage of Menu Item Custom Fields in plugins/themes.
- *
- * @since 0.1.0
- */
+// https://github.com/kucrut/wp-menu-item-custom-fields Library Plugin
 class Menu_Item_Custom_Fields_Example {
-
 	/**
 	 * Holds our custom fields
 	 *
@@ -37,8 +9,6 @@ class Menu_Item_Custom_Fields_Example {
 	 * @since  Menu_Item_Custom_Fields_Example 0.2.0
 	 */
 	protected static $fields = array();
-
-
 	/**
 	 * Initialize plugin
 	 */
@@ -46,14 +16,11 @@ class Menu_Item_Custom_Fields_Example {
 		add_action( 'wp_nav_menu_item_custom_fields', array( __CLASS__, '_fields' ), 10, 4 );
 		add_action( 'wp_update_nav_menu_item', array( __CLASS__, '_save' ), 10, 3 );
 		add_filter( 'manage_nav-menus_columns', array( __CLASS__, '_columns' ), 99 );
-
 		self::$fields = array(
-			'field-01' => __( 'Custom Field #1', 'menu-item-custom-fields-example' ),
-			'field-02' => __( 'Custom Field #2', 'menu-item-custom-fields-example' ),
+			'field_description' => __( 'Data Content', 'menu-item-custom-fields-example' ),
+			'field_02' => __( 'Custom Field #2', 'menu-item-custom-fields-example' ),
 		);
 	}
-
-
 	/**
 	 * Save custom field value
 	 *
@@ -67,30 +34,26 @@ class Menu_Item_Custom_Fields_Example {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 			return;
 		}
-
 		check_admin_referer( 'update-nav_menu', 'update-nav-menu-nonce' );
-
 		foreach ( self::$fields as $_key => $label ) {
-			$key = sprintf( 'menu-item-%s', $_key );
-
+			$key = sprintf( '_menu_item_%s', $_key );
 			// Sanitize
 			if ( ! empty( $_POST[ $key ][ $menu_item_db_id ] ) ) {
 				// Do some checks here...
 				$value = $_POST[ $key ][ $menu_item_db_id ];
-			} else {
+			}
+			else {
 				$value = null;
 			}
-
 			// Update
 			if ( ! is_null( $value ) ) {
 				update_post_meta( $menu_item_db_id, $key, $value );
-			} else {
+			}
+			else {
 				delete_post_meta( $menu_item_db_id, $key );
 			}
 		}
 	}
-
-
 	/**
 	 * Print field
 	 *
@@ -103,7 +66,7 @@ class Menu_Item_Custom_Fields_Example {
 	 */
 	public static function _fields( $id, $item, $depth, $args ) {
 		foreach ( self::$fields as $_key => $label ) :
-			$key   = sprintf( 'menu-item-%s', $_key );
+			$key   = sprintf( '_menu_item_%s', $_key );
 			$id    = sprintf( 'edit-%s-%s', $key, $item->ID );
 			$name  = sprintf( '%s[%s]', $key, $item->ID );
 			$value = get_post_meta( $item->ID, $key, true );
@@ -121,8 +84,6 @@ class Menu_Item_Custom_Fields_Example {
 			<?php
 		endforeach;
 	}
-
-
 	/**
 	 * Add our fields to the screen options toggle
 	 *
@@ -131,7 +92,6 @@ class Menu_Item_Custom_Fields_Example {
 	 */
 	public static function _columns( $columns ) {
 		$columns = array_merge( $columns, self::$fields );
-
 		return $columns;
 	}
 }
