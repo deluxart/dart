@@ -17,7 +17,7 @@ class Menu_Item_Custom_Fields_Example {
 		add_action( 'wp_update_nav_menu_item', array( __CLASS__, '_save' ), 10, 3 );
 		add_filter( 'manage_nav-menus_columns', array( __CLASS__, '_columns' ), 99 );
 		self::$fields = array(
-			'field_description' => __( 'Data Content', 'menu-item-custom-fields-example' ),
+			'field_description' => __( 'Data WOW delay', 'menu-item-custom-fields-example' ),
 			'field_02' => __( 'Custom Field #2', 'menu-item-custom-fields-example' ),
 		);
 	}
