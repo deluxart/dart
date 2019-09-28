@@ -210,23 +210,20 @@ $my_taxonomies_array = array('post','page');
 
 
 
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-function my_wp_nav_menu_objects( $items, $args ) {
-
-	// loop
-	foreach( $items as &$item ) {
-		// vars
-        $data_wow_delay = get_field('data-wow-delay', $item);
-
-		// append icon
-		if( $data_wow_delay ) {
-            $atts['data-wow-delay'] = ' '.$data_wow_delay.' ';
-		}
-
-	}
+// add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+// function my_wp_nav_menu_objects( $items, $args ) {
 
 
-	// return
-	return $items;
+// 	foreach( $items as &$item ) {
 
-}
+//         $data_wow_delay = get_field('data-wow-delay', $item);
+
+// 		if( $data_wow_delay ) {
+//             $atts['data-wow-delay'] = ' '.$data_wow_delay.' ';
+// 		}
+
+// 	}
+
+// 	return $items;
+
+// }
