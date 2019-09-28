@@ -4,57 +4,34 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package WordPress
- * @subpackage DELUX_Art
- * @since 1.0.0
+ * @package delux-art
  */
 
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			get_template_part( 'template-parts/content', get_post_type() );
 
-				get_template_part( 'template-parts/content/content', 'single' );
+			the_post_navigation();
 
-				if ( is_singular( 'attachment' ) ) {
-					// Parent post navigation.
-					the_post_navigation(
-						array(
-							/* translators: %s: parent post link */
-							'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'dart' ), '%title' ),
-						)
-					);
-				} elseif ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation(
-						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'dart' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', 'dart' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'dart' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', 'dart' ) . '</span> <br/>' .
-								'<span class="post-title">%title</span>',
-						)
-					);
-				}
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
+		endwhile; // End of the loop.
+		?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

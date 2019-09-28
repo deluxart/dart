@@ -4,9 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package WordPress
- * @subpackage DELUX_Art
- * @since 1.0.0
+ * @package delux-art
  */
 
 get_header();
@@ -19,37 +17,39 @@ get_header();
 
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php _e( 'Search results for:', 'dart' ); ?>
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'delux-art' ), '<span>' . get_search_query() . '</span>' );
+					?>
 				</h1>
-				<div class="page-description"><?php echo get_search_query(); ?></div>
 			</header><!-- .page-header -->
 
 			<?php
-			// Start the Loop.
+			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content/content', 'excerpt' );
+				get_template_part( 'template-parts/content', 'search' );
 
-				// End the loop.
 			endwhile;
 
-			// Previous/next page navigation.
-			dart_the_posts_navigation();
+			the_posts_navigation();
 
-			// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'template-parts/content/content', 'none' );
+
+			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();

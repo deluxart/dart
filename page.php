@@ -1,38 +1,40 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
  *
- * @package WordPress
- * @subpackage DELUX_Art
- * @since 1.0.0
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package delux-art
  */
 
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<?php
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			get_template_part( 'template-parts/content', 'page' );
 
-				get_template_part( 'template-parts/content/content', 'page' );
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
+		endwhile; // End of the loop.
+		?>
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php
+get_sidebar();
 get_footer();
