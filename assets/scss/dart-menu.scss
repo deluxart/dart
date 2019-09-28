@@ -10,8 +10,10 @@ $orange: #ffc000;
 		}
 
 		header {
-			background: none;
-			border-bottom: 1px solid #151515ba;
+            &#header {
+                background: none;
+                border-bottom: 1px solid #151515ba;
+            }
 
 			&.header-fixed {
 				border-bottom: 1px solid #151515ba;
