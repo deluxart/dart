@@ -219,3 +219,12 @@ function about_nav_menu_attributes( $atts, $item, $args )
   }
 return $atts;
 }
+
+add_filter( 'nav_menu_link_attributes', 'wpse_100726_extra_atts', 10, 3 );
+
+function wpse_100726_extra_atts( $atts, $item, $args )
+{
+    // inspect $item, then …
+    $atts['custom'] = 'some value';
+    return $atts;
+}
