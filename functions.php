@@ -205,26 +205,13 @@ $my_taxonomies_array = array('post','page');
  $wp_query->set( 'post_type', $my_taxonomies_array );
 }
 
-add_filter( 'nav_menu_link_attributes', 'about_nav_menu_attributes', 10, 3 );
-function about_nav_menu_attributes( $atts, $item, $args )
-{
-  // The ID of the target menu item
-  $menu_target = 10;
-
-  // inspect $item
-  if ($item->ID == $menu_target) {
-    $atts['class'] = 'highlight';
-    $atts['data-toggle'] = 'tooltip';
-    $atts['data-original-title'] ='about';
-  }
-return $atts;
-}
-
 add_filter( 'nav_menu_link_attributes', 'wpse_100726_extra_atts', 10, 3 );
 
 function wpse_100726_extra_atts( $atts, $item, $args )
 {
     // inspect $item, then …
     $atts['custom'] = 'some value';
+    $atts['data-toggle'] = 'tooltip';
+    $atts['data-original-title'] ='about';
     return $atts;
 }
