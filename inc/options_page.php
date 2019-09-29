@@ -110,10 +110,10 @@ function theme_options_do_page() { global $select_options; if ( ! isset( $_REQUE
 
     <tr class="form-field">
         <th valign="top" scope="row">
-            <label>Copyright:</label>
+            <label>Email:</label>
         </th>
         <td>
-           <input id="dart_theme_options[copyright]" name="dart_theme_options[copyright]" type="text" style="width: 100%" value="<?php echo $options[copyright];?>" size="50" class="regular-text" placeholder="Введите текст для copyright">
+           <input id="dart_theme_options[email]" name="dart_theme_options[email]" type="text" style="width: 100%" value="<?php echo $options[email];?>" size="50" class="regular-text" placeholder="Введите текст для email">
         </td>
     </tr>
 
