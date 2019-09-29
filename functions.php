@@ -180,7 +180,7 @@ register_nav_menus(array(
 	'mibile_nav'    => 'Мобильная навигация',
 
 // Для полноэкранного меню
-	'full_nav_1'    => 'Основное меню (Шапка)',
+	'full_nav_1'    => 'Основное меню (Full Screen)',
 	'full_nav_2'    => 'Меню #2',
 	'full_nav_3'    => 'Меню #3',
 // Для полноэкранного меню
@@ -214,3 +214,9 @@ require_once dirname( __FILE__ ) . '/inc/custom-walker.php';
 
 // Options page
 require get_template_directory() . '/inc/options_page.php';
+
+
+// For translate
+pll_register_string('Call_back', 'Call_back');
+// А так это выводится в шаблоне
+// <?php pll_e('Call_back','Global'); ?>
