@@ -207,30 +207,10 @@ $my_taxonomies_array = array('post','page');
 }
 
 
-
-
-
-
-// add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-// function my_wp_nav_menu_objects( $items, $args ) {
-
-
-// 	foreach( $items as &$item ) {
-
-//         $data_wow_delay = get_field('data-wow-delay', $item);
-
-// 		if( $data_wow_delay ) {
-//             $atts['data-wow-delay'] = ' '.$data_wow_delay.' ';
-// 		}
-
-// 	}
-
-// 	return $items;
-
-// }
-
-
-// require_once dirname( __FILE__ ) . '/inc/menu-item-custom-fields-example.php';
+// For custom fields
 require_once dirname( __FILE__ ) . '/menu-item-custom-fields/menu-item-custom-fields.php';
-// Bring in my custom walker class - filed in my themes inc/
 require_once dirname( __FILE__ ) . '/inc/custom-walker.php';
+
+
+// Options page
+require get_template_directory() . '/inc/options_page.php';
