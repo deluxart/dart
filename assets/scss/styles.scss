@@ -751,7 +751,11 @@ header {
 							padding: 50px;
 							position: relative;
 							z-index: 10;
-							text-align: center;
+                            // text-align: center;
+
+                            & > p {
+                                text-align: center;
+                            }
 						}
 
 						&:after {
