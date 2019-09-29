@@ -219,5 +219,19 @@ require get_template_directory() . '/inc/options_page.php';
 // For translate
 pll_register_string('Copyright', 'Copyright');
 
-// А так это выводится в шаблоне
-// <?php pll_e('Copyright','dart'); ?>
+
+
+// Отключение визуального редактора
+function disable_visual_editor($can)
+{
+    global $post;
+
+	$post_type = get_post_type($post);
+	if ($post_type == 'page') {
+        return false;
+    }
+
+    return $can;
+}
+
+add_filter('user_can_richedit', 'disable_visual_editor');
