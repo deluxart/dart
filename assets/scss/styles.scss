@@ -605,7 +605,11 @@ header {
 			& > div {
 				max-width: 376px;
 				margin: 0 auto;
-				position: relative;
+                position: relative;
+
+                & > p {
+                    margin: 0;
+                }
 
 				& > ul {
 					position: absolute;
