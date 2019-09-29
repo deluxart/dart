@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="content">
 			<div>
-				 <strong>DELUX-Art</strong>  © 2015-2019
+				 <strong><?php bloginfo( 'name' ); ?></strong> <?php pll_e('Copyright','dart'); ?>
 			</div>
 			<div>
 				<ul>

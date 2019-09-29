@@ -217,6 +217,7 @@ require get_template_directory() . '/inc/options_page.php';
 
 
 // For translate
-pll_register_string('Call_back', 'Call_back');
+pll_register_string('Copyright', 'Copyright');
+
 // А так это выводится в шаблоне
-// <?php pll_e('Call_back','Global'); ?>
+// <?php pll_e('Copyright','dart'); ?>
