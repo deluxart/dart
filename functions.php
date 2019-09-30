@@ -246,29 +246,43 @@ add_shortcode('portfolio-mini', 'my_shortcode_function');
 
 
 function my_shortcode_function() {
-    $args = array(
-        'posts_per_page' => 10,
-        'numberposts' => 6,
-        'category' => 1,
-        'post_status' => 'publish',
-    );
-    $my_query = new WP_Query( $args );
-    if ( $my_query->have_posts() ) :
-        // Start the loop.
-        while ( $my_query->have_posts() ) : $my_query->the_post();
 
-            /*
-             * Include the Post-Format-specific template for the content.
-             * If you want to override this in a child theme, then include a file
-             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-             */
-            get_template_part( 'template-parts/content', get_post_format() );
+	global $wp_query;
 
-            // End the loop.
-        endwhile;
-    // If no content, include the "No posts found" template.
-    else :
-        get_template_part( 'template-parts/content', 'none' );
+	$wp_query = new WP_Query(array(
+		'category_name' => 'portfolio',
+		'post_type' => 'page',
+		'posts_per_page' => '1',
+		'paged' => get_query_var('paged') ?: 1
+	));
 
-    endif;
-    }
+	if ( have_posts() ) :
+	        while ( have_posts() ) : the_post();
+	            get_template_part( 'template-parts/content', get_post_format() );
+	        endwhile;
+	    else :
+	        get_template_part( 'template-parts/content', 'none' );
+
+	    endif;
+
+	posts_nav_link(); // пагинация - echo тут не надо
+	wp_reset_query(); // сброс $wp_query
+
+
+// Рабочий вариант
+// global $wp_query;
+// $wp_query = new WP_Query(array(
+// 	'category_name' => 'classes',
+// 	'posts_per_page' => '5',
+// 	'paged' => get_query_var('paged') ?: 1
+// ));
+// while( have_posts() ){
+// 	the_post();
+
+// 	the_title();
+// }
+// posts_nav_link();
+// wp_reset_query();
+// Конец - Рабочий вариант
+
+}
