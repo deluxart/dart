@@ -235,3 +235,40 @@ function disable_visual_editor($can)
 }
 
 add_filter('user_can_richedit', 'disable_visual_editor');
+
+
+
+
+
+
+
+add_shortcode('portfolio-mini', 'my_shortcode_function');
+
+
+function my_shortcode_function() {
+    $args = array(
+        'posts_per_page' => 10,
+        'numberposts' => 6,
+        'category' => 1,
+        'post_status' => 'publish',
+    );
+    $my_query = new WP_Query( $args );
+    if ( $my_query->have_posts() ) :
+        // Start the loop.
+        while ( $my_query->have_posts() ) : $my_query->the_post();
+
+            /*
+             * Include the Post-Format-specific template for the content.
+             * If you want to override this in a child theme, then include a file
+             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+             */
+            get_template_part( 'template-parts/content', get_post_format() );
+
+            // End the loop.
+        endwhile;
+    // If no content, include the "No posts found" template.
+    else :
+        get_template_part( 'template-parts/content', 'none' );
+
+    endif;
+    }
