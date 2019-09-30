@@ -247,13 +247,13 @@ add_shortcode('portfolio-mini', 'my_shortcode_function');
 
 function my_shortcode_function() {
 
-	global $wp_query;
+	// global $wp_query;
 
 	$wp_query = new WP_Query(array(
 		'category_name' => 'portfolio',
 		'post_type' => 'page',
 		'posts_per_page' => '1',
-		// 'paged' => get_query_var('paged') ?: 1
+		'paged' => get_query_var('paged') ?: 1
 	));
 
 	if ( have_posts() ) :
@@ -266,7 +266,7 @@ function my_shortcode_function() {
 	    endif;
 
 	posts_nav_link(); // пагинация - echo тут не надо
-	wp_reset_query(); // сброс $wp_query
+	// wp_reset_query(); // сброс $wp_query
 
 
 // Рабочий вариант
