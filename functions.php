@@ -251,7 +251,6 @@ function my_shortcode_function() {
         'numberposts' => 6,
         'category' => 1,
         'post_status' => 'publish',
-        'post_type' => '',
     );
     $my_query = new WP_Query( $args );
     if ( $my_query->have_posts() ) :
