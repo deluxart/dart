@@ -268,49 +268,7 @@ function my_shortcode_function() {
 	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
 
-?>
-<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-	<script>
-	var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-	var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
-	var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-	var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
 
-
-
-
-jQuery(function($){
-	$('#true_loadmore').click(function(){
-		$(this).text('Загружаю...'); // изменяем текст кнопки, вы также можете добавить прелоадер
-		var data = {
-			'action': 'loadmore',
-			'query': true_posts,
-			'page' : current_page
-		};
-		$.ajax({
-			url:ajaxurl, // обработчик
-			data:data, // данные
-			type:'POST', // тип запроса
-			success:function(data){
-				if( data ) {
-					$('#true_loadmore').text('Загрузить ещё').before(data); // вставляем новые посты
-					current_page++; // увеличиваем номер страницы на единицу
-					if (current_page == max_pages) $("#true_loadmore").remove(); // если последняя страница, удаляем кнопку
-				} else {
-					$('#true_loadmore').remove(); // если мы дошли до последней страницы постов, скроем кнопку
-				}
-			}
-		});
-	});
-});
-
-
-
-
-	</script>
-	<div id="true_loadmore">Загрузить ещё</div>
-<?php endif; ?>
-<?php
 // Рабочий вариант
 // global $wp_query;
 // $wp_query = new WP_Query(array(
