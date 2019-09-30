@@ -253,7 +253,7 @@ function my_shortcode_function() {
 		'category_name' => 'portfolio',
 		'post_type' => 'page',
 		'posts_per_page' => '1',
-		'paged' => get_query_var('paged') ?: 1
+		// 'paged' => get_query_var('paged') ?: 1
 	));
 
 	if ( have_posts() ) :
