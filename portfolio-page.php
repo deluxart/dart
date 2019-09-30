@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Portfolio
+Template Name: Home page
 */
 
 get_header();
@@ -9,21 +9,19 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-<?php
-$args = array(
-	'numberposts' => 6,
-	'category' => 1,
-	'post_status' => 'publish',
-);
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-$result = wp_get_recent_posts($args);
+			get_template_part( 'template-parts/content', 'home' );
 
-foreach( $result as $p ){
-	?>
-	— <a href="<?php echo get_permalink($p['ID']) ?>"><?php echo $p['post_title'] ?></a><br />
-	<?php
-}
-?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
