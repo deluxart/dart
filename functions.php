@@ -246,43 +246,26 @@ add_shortcode('portfolio-mini', 'my_shortcode_function');
 
 
 function my_shortcode_function() {
-
 	global $wp_query;
-
 	$wp_query = new WP_Query(array(
 		'category_name' => 'portfolio',
 		'post_type' => 'page',
 		'posts_per_page' => '1',
 		'paged' => get_query_var('paged') ?: 1
 	));
-
+ob_start();
 	if ( have_posts() ) :
 	        while ( have_posts() ) : the_post();
+
 	            get_template_part( 'template-parts/content', get_post_format() );
+
 	        endwhile;
 	    else :
 	        get_template_part( 'template-parts/content', 'none' );
-
 	    endif;
 
 	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
-
-
-// Рабочий вариант
-// global $wp_query;
-// $wp_query = new WP_Query(array(
-// 	'category_name' => 'classes',
-// 	'posts_per_page' => '5',
-// 	'paged' => get_query_var('paged') ?: 1
-// ));
-// while( have_posts() ){
-// 	the_post();
-
-// 	the_title();
-// }
-// posts_nav_link();
-// wp_reset_query();
-// Конец - Рабочий вариант
-
+	$out = ob_get_clean();
+	return $out;
 }
