@@ -254,6 +254,7 @@ function my_shortcode_function() {
 		'paged' => get_query_var('paged') ?: 1
 	));
 ob_start();
+echo '<div class="portfolio">';
 	if ( have_posts() ) :
 	        while ( have_posts() ) : the_post();
 
@@ -263,9 +264,10 @@ ob_start();
 	    else :
 	        get_template_part( 'template-parts/content', 'none' );
 	    endif;
+echo '</div>';
 
 	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
-    $out = ob_get_clean();
-    return '<div class="portfolio">'. $out .'</div>';
+	$out = ob_get_clean();
+	return $out;
 }
