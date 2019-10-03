@@ -22,16 +22,16 @@ jQuery('.title').each(function(){
 jQuery(function(){
     jQuery(window).scroll(function() {
         var topHead = jQuery(document).scrollTop();
-        if (topHead > 80) { 
-            jQuery('header').addClass('header-fixed'); 
-        } else { 
+        if (topHead > 80) {
+            jQuery('header').addClass('header-fixed');
+        } else {
             jQuery('header').removeClass('header-fixed');
         }
     });
 });
-jQuery(window).load(function(){ 
-     if (jQuery(document).scrollTop() > 80) { 
-         jQuery('header').addClass('header-fixed'); 
+jQuery(window).load(function(){
+     if (jQuery(document).scrollTop() > 80) {
+         jQuery('header').addClass('header-fixed');
      }
 });
 // End - Add fixed class for header
@@ -96,6 +96,14 @@ function extended_parallax() {
     }
 };
 
+
+
+jQuery('.portfolio > div:nth-child(1)').attr('data-wow-delay') = '0.2s';
+jQuery('.portfolio > div:nth-child(2)').attr('data-wow-delay') = '0.3s';
+jQuery('.portfolio > div:nth-child(3)').attr('data-wow-delay') = '0.4s';
+jQuery('.portfolio > div:nth-child(4)').attr('data-wow-delay') = '0.5s';
+jQuery('.portfolio > div:nth-child(5)').attr('data-wow-delay') = '0.6s';
+jQuery('.portfolio > div:nth-child(6)').attr('data-wow-delay') = '0.7s';
 
 
 
