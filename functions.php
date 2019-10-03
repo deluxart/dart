@@ -250,7 +250,7 @@ function my_shortcode_function() {
 	$wp_query = new WP_Query(array(
 		'category_name' => 'portfolio',
 		'post_type' => 'page',
-		'posts_per_page' => '6',
+		'posts_per_page' => '3',
 		'paged' => get_query_var('paged') ?: 1
 	));
 ob_start();
