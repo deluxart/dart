@@ -1,6 +1,6 @@
 
 // Other scripts
-        wow = new WOW({mobile: false})
+        wow = new WOW({mobile: false});
         wow.init();
 // Other scripts
 
@@ -88,11 +88,11 @@ jQuery('.fullscreen-modal .close').click(function(event) {
 
 // wgl Extended Parallax
 function extended_parallax() {
-    var item = jQuery('.extended-parallax')
+    var item = jQuery('.extended-parallax');
     if (item.length !== 0 ) {
         item.each( function() {
             jQuery(this).paroller();
-        })
+        });
     }
 };
 
