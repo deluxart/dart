@@ -266,6 +266,6 @@ ob_start();
 
 	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
-	$out = ob_get_clean();
-	return $out;
+    $out = ob_get_clean();
+    return '<div class="portfolio">'. $out .'</div>';
 }
