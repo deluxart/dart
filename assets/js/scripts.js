@@ -98,12 +98,12 @@ function extended_parallax() {
 
 
 
-jQuery('.portfolio > div:nth-child(1)').attr('data-wow-delay') = '0.2s';
-jQuery('.portfolio > div:nth-child(2)').attr('data-wow-delay') = '0.3s';
-jQuery('.portfolio > div:nth-child(3)').attr('data-wow-delay') = '0.4s';
-jQuery('.portfolio > div:nth-child(4)').attr('data-wow-delay') = '0.5s';
-jQuery('.portfolio > div:nth-child(5)').attr('data-wow-delay') = '0.6s';
-jQuery('.portfolio > div:nth-child(6)').attr('data-wow-delay') = '0.7s';
+jQuery('.portfolio > div:nth-child(1)').data('wow-delay', '0.2s');
+jQuery('.portfolio > div:nth-child(2)').data('wow-delay', '0.3s');
+jQuery('.portfolio > div:nth-child(3)').data('wow-delay', '0.4s');
+jQuery('.portfolio > div:nth-child(4)').data('wow-delay', '0.5s');
+jQuery('.portfolio > div:nth-child(5)').data('wow-delay', '0.6s');
+jQuery('.portfolio > div:nth-child(6)').data('wow-delay', '0.7s');
 
 
 
