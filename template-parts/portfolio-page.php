@@ -20,6 +20,22 @@
 				<h4><?php the_title(); ?></h4>
 				<p><?php the_field( 'korotkoe_opisanie' ); ?></p>
 			</div>
-		</div>
+        </div>
+
+<?php // metki ( value )
+$metki_array = get_field( 'metki' );
+echo '<ul>';
+if ( $metki_array ):
+    foreach ( $metki_array as $metki_item ):
+        echo '<li><a href="#">'. $metki_item .'</a></li>';
+	 	// echo $metki_item;
+    endforeach;
+echo '</ul>';
+endif; ?>
+<!--
+		<ul>
+			<li><a href="#">Веб-дизайн</a></li>
+			<li><a href="#">Верстка</a></li>
+		</ul> -->
 	</a>
 </div><!-- #portfolio-<?php the_ID(); ?> -->
