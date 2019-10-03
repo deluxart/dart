@@ -264,9 +264,8 @@ ob_start();
 	        get_template_part( 'template-parts/content', 'none' );
 	    endif;
 
-
-    $out = ob_get_clean();
-    posts_nav_link(); // пагинация - echo тут не надо
+	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
+    $out = ob_get_clean();
     return '<div class="portfolio">'. $out .'</div>';
 }
