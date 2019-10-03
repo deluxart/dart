@@ -94,7 +94,7 @@ function extended_parallax() {
             jQuery(this).paroller();
         });
     }
-};
+}
 
 
 

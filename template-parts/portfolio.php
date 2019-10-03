@@ -27,7 +27,7 @@ $metki_array = get_field( 'metki' );
 echo '<ul>';
 if ( $metki_array ):
     foreach ( $metki_array as $metki_item ):
-        echo '<li><a href="#">'. $metki_item .'</a></li>';
+        echo '<li>'. $metki_item .'</li>';
 	 	// echo $metki_item;
     endforeach;
 echo '</ul>';
