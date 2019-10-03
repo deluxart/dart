@@ -617,28 +617,6 @@ header {
                     margin: 0;
                 }
 
-				& > ul {
-					position: absolute;
-					bottom: 20px;
-					left: 20px;
-					opacity: 1;
-					transition: 0.2s all;
-
-					li {
-						display: inline-block;
-						font-size: 12px;
-						background: $orange;
-						color: #000;
-						padding: 2px 10px;
-						float: left;
-						box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.11);
-
-						a {
-							color: #000;
-						}
-					}
-				}
-
 				& > a {
 					position: relative;
 					display: block;
@@ -702,7 +680,29 @@ header {
 						left: 0;
 						background: transparent;
 						/*background: linear-gradient(to top, rgba(0, 0, 0, 0.21) 0%, rgba(0,0,0,0.1) 100%);*/
-					}
+                    }
+
+                    & > ul {
+                        position: absolute;
+                        bottom: 20px;
+                        left: 20px;
+                        opacity: 1;
+                        transition: 0.2s all;
+
+                        li {
+                            display: inline-block;
+                            font-size: 12px;
+                            background: $orange;
+                            color: #000;
+                            padding: 2px 10px;
+                            float: left;
+                            box-shadow: 0px 6px 13px 0px rgba(0, 0, 0, 0.11);
+
+                            a {
+                                color: #000;
+                            }
+                        }
+                    }
 				}
 
 				&:hover {
