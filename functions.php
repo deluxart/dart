@@ -146,6 +146,19 @@ function delux_art_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'delux_art_scripts' );
 
+
+
+
+add_filter('delux_art_scripts', 'myplugin_remove_type_attr', 10, 2);
+// add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+
+function myplugin_remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */
