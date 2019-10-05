@@ -761,6 +761,7 @@ header {
 
                             & > p {
                                 text-align: center;
+                                position: relative;
                             }
 
 
@@ -800,7 +801,7 @@ header {
                                     background-position: center;
                                     background-image: url(../assets/images/loading_black.svg);
                                     background-size: 36px 36px;
-                                    height: 38px;
+                                    height: 44px;
                                     border-radius: 30px;
                                 }
 

@@ -2,3 +2,27 @@
 
 body.admin-bar header#header { top: 32px; }
 .content-page { position: relative; z-index: 1; }
+
+.wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+    padding: 10px;
+}
+.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+    padding: 10px;
+}
+div.wpcf7-mail-sent-ok:before,div.wpcf7-validation-errors:before {
+    font: 26px/30px FontAwesome;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+div.wpcf7-mail-sent-ok:before {
+    content:'\f00c';
+}
+div.wpcf7-validation-errors:before {
+    content:'\f057';
+}
