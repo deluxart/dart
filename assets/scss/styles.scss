@@ -1196,9 +1196,8 @@ footer {
     }
 }
 @media (max-width: 768px) {
-	h2 {
-		font-size: 26px;
-	}
+    #home_slider h1 { margin-top: 0; }
+	h2 { font-size: 26px; }
 	#services .container .content { grid-template-columns: 1fr; grid-gap: 40px; }
 
 
@@ -1291,7 +1290,7 @@ footer {
 
 
 @media (max-width: 380px) {
-    #home_slider h1 { margin-top: 0; font-size: 16px; }
+    #home_slider h1 { font-size: 16px; }
     #home_slider .da_glich { font-size: 22px; line-height: 29px; width: 117px; }
 
     #about ul.socials li a { width: 42px; height: 42px; line-height: 42px; font-size: 21px;}
