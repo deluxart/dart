@@ -417,23 +417,3 @@ function register_portfolio_post_type() {
 	) );
 
 }
-
-## Отфильтруем ЧПУ произвольного типа
-// фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
-add_filter('post_type_link', 'portfolio_permalink', 1, 2);
-function portfolio_permalink( $permalink, $post ){
-	// выходим если это не наш тип записи: без холдера %products%
-	if( strpos($permalink, '%portfoliocat%') === false )
-		return $permalink;
-
-	// Получаем элементы таксы
-	$terms = get_the_terms($post, 'portfoliocat');
-	// если есть элемент заменим холдер
-	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
-		$term_slug = array_pop($terms)->slug;
-	// элемента нет, а должен быть...
-	else
-		$term_slug = '';
-
-	return str_replace('%portfoliocat%', $term_slug, $permalink );
-}
