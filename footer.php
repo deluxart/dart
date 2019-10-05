@@ -115,7 +115,7 @@
 					<a href="#" class="dart-btn">Обратный звонок <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 				<div>
-					<a href="#" class="feed-link">Обратная связь <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="/contacts" class="feed-link">Обратная связь <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
