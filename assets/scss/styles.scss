@@ -788,7 +788,21 @@ header {
                                     }
                                 }
 
-
+                                .ajax-loader {
+                                    position: absolute;
+                                    left: 2px;
+                                    margin: 0;
+                                    top: 0;
+                                    transform: none;
+                                    background-color: $orange;
+                                    width: calc(100% - 4px);
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-image: url(../assets/images/loading_black.svg);
+                                    background-size: 36px 36px;
+                                    height: 38px;
+                                    border-radius: 30px;
+                                }
 
 						}
 
@@ -852,7 +866,12 @@ header {
 								white-space: nowrap;
 								display: grid;
 								grid-template-columns: 26px 1fr;
-								align-items: center;
+                                align-items: center;
+                                transition: 0.1s all;
+
+                                &:hover {
+                                    transform: scale(1.03);
+                                }
 
 								i {
 									color: $orange;
