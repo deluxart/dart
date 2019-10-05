@@ -358,7 +358,7 @@ function register_portfolio_post_type() {
 		'map_meta_cap'        => true,
 		'hierarchical'        => false,
 		'rewrite'             => array( 'slug'=>'portfolio/%portfoliocat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-		'has_archive'         => 'portfolio',
+		'has_archive'         => true,
 		'query_var'           => true,
 		'supports'            => array( 'title', 'editor' ),
 		'taxonomies'          => array( 'portfoliocat' ),
