@@ -359,7 +359,8 @@ header {
 		text-align: center;
 		text-transform: uppercase;
 		z-index: 99999;
-		margin-bottom: 30px;
+        margin-bottom: 30px;
+        margin-top: 0;
 	}
 }
 
@@ -1196,7 +1197,6 @@ footer {
     }
 }
 @media (max-width: 768px) {
-    #home_slider h1 { margin-top: 0; }
 	h2 { font-size: 26px; }
 	#services .container .content { grid-template-columns: 1fr; grid-gap: 40px; }
 
