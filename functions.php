@@ -326,7 +326,10 @@ function register_portfolio_post_type() {
 		'hierarchical'          => true,
 		'rewrite'               => array('slug'=>'portfolio', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
 		'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-	) );
+    ) );
+
+
+
 
 	// тип записи - вопросы - portfolio
 	register_post_type('portfolio', array(
