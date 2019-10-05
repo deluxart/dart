@@ -360,10 +360,10 @@ add_action( 'init', 'register_portfolio_post_type' );
 function register_portfolio_post_type() {
 	// Раздел вопроса - portfoliocat
 	register_taxonomy('portfoliocat', array('portfolio'), array(
-		'label'                 => 'Раздел вопроса', // определяется параметром $labels->name
+		'label'                 => 'Категории', // определяется параметром $labels->name
 		'labels'                => array(
-			'name'              => 'Разделы вопросов',
-			'singular_name'     => 'Раздел вопроса',
+			'name'              => 'Категории работ',
+			'singular_name'     => 'Категории',
 			'search_items'      => 'Искать Раздел вопроса',
 			'all_items'         => 'Все Разделы вопросов',
 			'parent_item'       => 'Родит. раздел вопроса',
@@ -386,18 +386,19 @@ function register_portfolio_post_type() {
 
 	// тип записи - вопросы - portfolio
 	register_post_type('portfolio', array(
-		'label'               => 'Вопросы',
+		'label'               => 'Портфолио',
 		'labels'              => array(
-			'name'          => 'Вопросы',
+			'name'          => 'Портфолио',
 			'singular_name' => 'Вопрос',
-			'menu_name'     => 'Архив вопросов',
-			'all_items'     => 'Все вопросы',
-			'add_new'       => 'Добавить вопрос',
-			'add_new_item'  => 'Добавить новый вопрос',
+			'menu_name'     => 'Портфолио',
+			'all_items'     => 'Все работы',
+			'add_new'       => 'Добавить работу',
+			'add_new_item'  => 'Добавить новую работу',
 			'edit'          => 'Редактировать',
-			'edit_item'     => 'Редактировать вопрос',
-			'new_item'      => 'Новый вопрос',
-		),
+			'edit_item'     => 'Редактировать работу',
+			'new_item'      => 'Новая работа',
+        ),
+        'menu_icon'           => 'dashicons-list-view',
 		'description'         => '',
 		'public'              => true,
 		'publicly_queryable'  => true,
