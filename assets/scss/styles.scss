@@ -572,14 +572,15 @@ header {
 
 #portfolio {
 	text-align: center;
-	position: relative;
+    position: relative;
+
+    &.page {
+        margin-top: 30px;
+    }
 
 	.container {
 		padding-top: 80px;
 		padding-bottom: 80px;
-		// background: url(../images/Portfolio.svg) no-repeat;
-		// background-size: auto 160px;
-		// background-position: 0% 7px;
 
 		h2 {
 			span {
