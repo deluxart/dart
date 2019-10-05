@@ -11,7 +11,6 @@
 
 ?>
 <?php $options = get_option( 'dart_theme_options' ); ?>
-<!-- <?php echo $options[fb];?> -->
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
