@@ -453,4 +453,3 @@ function portfolio_archive_title( $title ) {
     return $title;
 }
 add_filter( 'wp_title', 'portfolio_archive_title' );
-add_filter( 'get_the_archive_title', 'portfolio_archive_title' );
