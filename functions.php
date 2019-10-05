@@ -356,86 +356,84 @@ add_shortcode("listmenu", "list_menu");
 
 
 
-
-add_action('init', 'my_custom_init');
-function my_custom_init(){
-	register_post_type('portfolio', array(
-		'labels'             => array(
-			'name'               => 'Портфолио', // Основное название типа записи
-			'singular_name'      => 'Портфолио', // отдельное название записи типа Book
-			'add_new'            => 'Добавить новую',
-			'add_new_item'       => 'Добавить новую работу',
-			'edit_item'          => 'Редактировать работу',
-			'new_item'           => 'Новая работа',
-			'view_item'          => 'Посмотреть работу',
-			'search_items'       => 'Найти работу',
-			'not_found'          =>  'Работ не найдено',
-			'not_found_in_trash' => 'В корзине работ не найдено',
-			'parent_item_colon'  => '',
-			'menu_name'          => 'Портфолио'
-
-          ),
-        'menu_icon' => 'dashicons-excerpt-view',
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => true,
-		'capability_type'    => 'post',
-		'has_archive'        => true,
-		'hierarchical'       => false,
-		'menu_position'      => null,
-		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+add_action( 'init', 'register_portfolio_post_type' );
+function register_portfolio_post_type() {
+	// Раздел вопроса - portfoliocat
+	register_taxonomy('portfoliocat', array('portfolio'), array(
+		'label'                 => 'Раздел вопроса', // определяется параметром $labels->name
+		'labels'                => array(
+			'name'              => 'Разделы вопросов',
+			'singular_name'     => 'Раздел вопроса',
+			'search_items'      => 'Искать Раздел вопроса',
+			'all_items'         => 'Все Разделы вопросов',
+			'parent_item'       => 'Родит. раздел вопроса',
+			'parent_item_colon' => 'Родит. раздел вопроса:',
+			'edit_item'         => 'Ред. Раздел вопроса',
+			'update_item'       => 'Обновить Раздел вопроса',
+			'add_new_item'      => 'Добавить Раздел вопроса',
+			'new_item_name'     => 'Новый Раздел вопроса',
+			'menu_name'         => 'Раздел вопроса',
+		),
+		'description'           => 'Рубрики для раздела вопросов', // описание таксономии
+		'public'                => true,
+		'show_in_nav_menus'     => false, // равен аргументу public
+		'show_ui'               => true, // равен аргументу public
+		'show_tagcloud'         => false, // равен аргументу show_ui
+		'hierarchical'          => true,
+		'rewrite'               => array('slug'=>'portfolio', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
+		'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
 	) );
+
+	// тип записи - вопросы - portfolio
+	register_post_type('portfolio', array(
+		'label'               => 'Вопросы',
+		'labels'              => array(
+			'name'          => 'Вопросы',
+			'singular_name' => 'Вопрос',
+			'menu_name'     => 'Архив вопросов',
+			'all_items'     => 'Все вопросы',
+			'add_new'       => 'Добавить вопрос',
+			'add_new_item'  => 'Добавить новый вопрос',
+			'edit'          => 'Редактировать',
+			'edit_item'     => 'Редактировать вопрос',
+			'new_item'      => 'Новый вопрос',
+		),
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_rest'        => false,
+		'rest_base'           => '',
+		'show_in_menu'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => false,
+		'rewrite'             => array( 'slug'=>'portfolio/%portfoliocat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
+		'has_archive'         => 'portfolio',
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor' ),
+		'taxonomies'          => array( 'portfoliocat' ),
+	) );
+
 }
-
-
-//display contextual help for Books
-
-function codex_add_help_text( $contextual_help, $screen_id, $screen ) {
-  //$contextual_help .= var_dump( $screen ); // use this to help determine $screen->id
-  if ( 'portfolio' == $screen->id ) {
-    $contextual_help =
-      '<p>' . __('Things to remember when adding or editing a book:', 'your_text_domain') . '</p>' .
-      '<ul>' .
-      '<li>' . __('Specify the correct genre such as Mystery, or Historic.', 'your_text_domain') . '</li>' .
-      '<li>' . __('Specify the correct writer of the book.  Remember that the Author module refers to you, the author of this book review.', 'your_text_domain') . '</li>' .
-      '</ul>' .
-      '<p>' . __('If you want to schedule the book review to be published in the future:', 'your_text_domain') . '</p>' .
-      '<ul>' .
-      '<li>' . __('Under the Publish module, click on the Edit link next to Publish.', 'your_text_domain') . '</li>' .
-      '<li>' . __('Change the date to the date to actual publish this article, then click on Ok.', 'your_text_domain') . '</li>' .
-      '</ul>' .
-      '<p><strong>' . __('For more information:', 'your_text_domain') . '</strong></p>' .
-      '<p>' . __('<a href="http://codex.wordpress.org/Posts_Edit_SubPanel" target="_blank">Edit Posts Documentation</a>', 'your_text_domain') . '</p>' .
-      '<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>', 'your_text_domain') . '</p>' ;
-  } elseif ( 'edit-book' == $screen->id ) {
-    $contextual_help =
-      '<p>' . __('This is the help screen displaying the table of books blah blah blah.', 'your_text_domain') . '</p>' ;
-  }
-  return $contextual_help;
-}
-add_action( 'contextual_help', 'codex_add_help_text', 10, 3 );
-
 
 ## Отфильтруем ЧПУ произвольного типа
-// сам фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
+// фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
 add_filter('post_type_link', 'portfolio_permalink', 1, 2);
-
 function portfolio_permalink( $permalink, $post ){
 	// выходим если это не наш тип записи: без холдера %products%
-	if( strpos($permalink, '%products%') === FALSE )
+	if( strpos($permalink, '%portfoliocat%') === false )
 		return $permalink;
 
 	// Получаем элементы таксы
-	$terms = get_the_terms($post, 'products');
+	$terms = get_the_terms($post, 'portfoliocat');
 	// если есть элемент заменим холдер
 	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
-		$taxonomy_slug = $terms[0]->slug;
+		$term_slug = array_pop($terms)->slug;
 	// элемента нет, а должен быть...
 	else
-		$taxonomy_slug = 'no-products';
+		$term_slug = 'no-portfoliocat';
 
-	return str_replace('%products%', $taxonomy_slug, $permalink );
+	return str_replace('%portfoliocat%', $term_slug, $permalink );
 }
