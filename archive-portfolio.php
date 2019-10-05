@@ -6,7 +6,7 @@
  *
  * @package delux-art
  */
-
+wp_title( $sep, $echo, $seplocation );
 get_header();
 ?>
 
