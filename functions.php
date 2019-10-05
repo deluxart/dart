@@ -417,3 +417,19 @@ function register_portfolio_post_type() {
 	) );
 
 }
+
+## Отфильтруем ЧПУ произвольного типа
+// фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
+add_filter('post_type_link', 'portfolio_permalink', 1, 2);
+function portfolio_permalink( $permalink, $post ){
+	if( strpos($permalink, '%portfoliocat%') === false )
+		return $permalink;
+
+	$terms = get_the_terms($post, 'portfoliocat');
+	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
+		$term_slug = array_pop($terms)->slug;
+	else
+		$term_slug = 'cat';
+
+	return str_replace('%portfoliocat%', $term_slug, $permalink );
+}
