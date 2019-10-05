@@ -1015,7 +1015,8 @@ footer {
 		}
 
 		.fs-cont {
-
+            position: relative;
+            z-index: 1;
 		}
     }
 
@@ -1107,22 +1108,26 @@ footer {
     		}
     		&.phone {
     			display: grid;
-    			grid-template-columns: 30px 1fr;
+                grid-template-columns: 30px 1fr;
+                grid-column-gap: 10px;
     			border-right: 1px solid #171717;
 
 		    	i {
 		    		font-size: 24px;
-		    		color: $orange;
+                    color: $orange;
+                    padding-top: 6px;
 		    	}
     		}
 
     		&.mail {
     			display: grid;
-    			grid-template-columns: 30px 1fr;
+                grid-template-columns: 30px 1fr;
+                 grid-column-gap: 10px;
 
 		    	i {
 		    		font-size: 24px;
-		    		color: $orange;
+                    color: $orange;
+                    padding-top: 6px;
 		    	}
     		}
     	}
