@@ -63,6 +63,10 @@ jQuery('input[type=submit].dart-btn').click(function (event) {
     jQuery('.wpcf7').removeClass('input-effect');
 });
 
+jQuery(".wpcf7-form-control-wrap").click(function () {
+    jQuery(this).children(".wpcf7-not-valid-tip").fadeOut('slow');
+});
+
 
 // Script for DART-menu
 jQuery('.dart-menu .container .content nav ul li a[href^="#"]').click(function(event) {
