@@ -178,11 +178,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 register_nav_menus(array(
 	'mibile_nav'    => 'Мобильная навигация',
-
 // Для полноэкранного меню
 	'full_nav_1'    => 'Основное меню (Full Screen)',
-	'full_nav_2'    => 'Меню #2',
-	'full_nav_3'    => 'Меню #3',
+	'services_nav_1'    => 'Наши сулуги - Разработка',
+	'services_nav_2'    => 'Наши сулуги - Дизайн',
+	'services_nav_3'    => 'Наши сулуги - Прочее',
 // Для полноэкранного меню
 ));
 
@@ -305,3 +305,45 @@ echo '</div>';
 //     return $content;
 // });
 // End - Remove sspan tags for CF7
+
+
+// Function that will return our Wordpress menu
+function list_menu($atts, $content = null) {
+	extract(shortcode_atts(array(
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => '',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'depth'           => 0,
+		'walker'          => '',
+		'theme_location'  => ''),
+		$atts));
+
+
+	return wp_nav_menu( array(
+		'menu'            => $menu,
+		'container'       => $container,
+		'container_class' => $container_class,
+		'container_id'    => $container_id,
+		'menu_class'      => $menu_class,
+		'menu_id'         => $menu_id,
+		'echo'            => false,
+		'fallback_cb'     => $fallback_cb,
+		'before'          => $before,
+		'after'           => $after,
+		'link_before'     => $link_before,
+		'link_after'      => $link_after,
+		'depth'           => $depth,
+		'walker'          => $walker,
+		'theme_location'  => $theme_location));
+}
+//Create the shortcode
+add_shortcode("listmenu", "list_menu");
