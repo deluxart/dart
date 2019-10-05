@@ -21,10 +21,10 @@
 			</div>
 			<div>
 				<ul>
-					<li><a href="<?php echo $options[be];?>"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-					<li><a href="<?php echo $options[fb];?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="<?php echo $options[in];?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="<?php echo $options[tg];?>"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $options[be];?>" target="_blank"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $options[fb];?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $options[in];?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $options[tg];?>" target="_blank"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
 					<li><a href="mailto:<?php echo $options[email];?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
