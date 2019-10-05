@@ -17,12 +17,11 @@ get_header();
 
 	<div id="portfolio" class="content-area">
 		<div class="container">
-            <div class="portfolio">
+		<h2 class="title wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.5s"><?php the_title(); ?><span>Наши работы</span></h2>
+
                 <?php the_content(); ?>
-
-
-	            </div>
         </div><!-- #main -->
+        	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
 	</div><!-- #primary -->
 
 <?php
