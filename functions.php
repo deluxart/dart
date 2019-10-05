@@ -390,13 +390,13 @@ echo '<div class="portfolio">';
 	    endif;
 echo '</div>';
 
-	// posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
 	$out = ob_get_clean();
 	return $out;
 }
 
 
+// Чистим от муосра добявляемого WP
 function remove_wpautop(){
    $pages = array(home);
    if (is_page($pages)){
@@ -414,11 +414,10 @@ function remove_recent_comments_style() {
 }
 add_action('widgets_init', 'remove_recent_comments_style');
 
-
 add_action( 'template_redirect', function(){
     ob_start( function( $buffer ){
         $buffer = str_replace( array( 'type="text/javascript"', "type='text/javascript'" ), '', $buffer );
-
         return $buffer;
     });
 });
+// End - Чистим от муосра добявляемого WP
