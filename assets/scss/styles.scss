@@ -15,18 +15,6 @@ body {
 	}
 }
 
-button {
-	&:focus {
-		outline: none;
-	}
-}
-
-.home {
-    p {
-        margin: 0;
-    }
-}
-
 .bg-grid {
     position: absolute;
     content: '';
@@ -1168,11 +1156,6 @@ footer {
     }
 }
 /*Full screen modal*/
-
-
-
-
-
 
 
 .modal-dialog {
