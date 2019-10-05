@@ -364,17 +364,17 @@ function register_portfolio_post_type() {
 		'labels'                => array(
 			'name'              => 'Категории работ',
 			'singular_name'     => 'Категории',
-			'search_items'      => 'Искать Раздел вопроса',
-			'all_items'         => 'Все Разделы вопросов',
-			'parent_item'       => 'Родит. раздел вопроса',
-			'parent_item_colon' => 'Родит. раздел вопроса:',
-			'edit_item'         => 'Ред. Раздел вопроса',
-			'update_item'       => 'Обновить Раздел вопроса',
-			'add_new_item'      => 'Добавить Раздел вопроса',
+			'search_items'      => 'Искать категорию',
+			'all_items'         => 'Все категории',
+			'parent_item'       => 'Родит. категория',
+			'parent_item_colon' => 'Родит. категория:',
+			'edit_item'         => 'Ред. категорию',
+			'update_item'       => 'Обновить категорию',
+			'add_new_item'      => 'Добавить категорию',
 			'new_item_name'     => 'Новый Раздел вопроса',
-			'menu_name'         => 'Раздел вопроса',
+			'menu_name'         => 'Категории',
 		),
-		'description'           => 'Рубрики для раздела вопросов', // описание таксономии
+		'description'           => 'Рубрики для портфолио', // описание таксономии
 		'public'                => true,
 		'show_in_nav_menus'     => false, // равен аргументу public
 		'show_ui'               => true, // равен аргументу public
@@ -418,9 +418,7 @@ function register_portfolio_post_type() {
 	) );
 
 }
-
 ## Отфильтруем ЧПУ произвольного типа
-// фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
 add_filter('post_type_link', 'portfolio_permalink', 1, 2);
 function portfolio_permalink( $permalink, $post ){
 	if( strpos($permalink, '%portfoliocat%') === false )
