@@ -362,7 +362,10 @@ function register_portfolio_post_type() {
 	) );
 
 }
-## Отфильтруем ЧПУ произвольного типа
+
+
+
+
 add_filter('post_type_link', 'portfolio_permalink', 1, 2);
 function portfolio_permalink( $permalink, $post ){
 	if( strpos($permalink, '%portfoliocat%') === false )
