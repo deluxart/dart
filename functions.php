@@ -433,7 +433,7 @@ function portfolio_permalink( $permalink, $post ){
 		$term_slug = array_pop($terms)->slug;
 	// элемента нет, а должен быть...
 	else
-		$term_slug = 'no-portfoliocat';
+		$term_slug = '';
 
 	return str_replace('%portfoliocat%', $term_slug, $permalink );
 }
