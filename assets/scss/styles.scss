@@ -1189,6 +1189,12 @@ footer {
 	#feedback .container, #portfolio .container, #about .container { background-size: contain; }
 }
 
+@media (max-width: 782px) {
+    body.admin-bar header#header {
+        top: 46px;
+    }
+}
+
 @media (max-width: 768px) {
 	h2 {
 		font-size: 26px;
