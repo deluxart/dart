@@ -444,12 +444,3 @@ add_filter( 'get_the_archive_title', function( $title ){
 });
 
 
-
-function portfolio_archive_title( $title ) {
-
-    if(is_post_type_archive('portfolio'))
-        return 'Programme';
-
-    return $title;
-}
-add_filter( 'wp_title', 'portfolio_archive_title' );
