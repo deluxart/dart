@@ -303,30 +303,30 @@ add_shortcode("listmenu", "list_menu");
 add_action( 'init', 'register_portfolio_post_type' );
 function register_portfolio_post_type() {
 	// Раздел вопроса - portfoliocat
-	// register_taxonomy('portfoliocat', array('portfolio'), array(
-	// 	'label'                 => 'Категории', // определяется параметром $labels->name
-	// 	'labels'                => array(
-	// 		'name'              => 'Категории работ',
-	// 		'singular_name'     => 'Категории',
-	// 		'search_items'      => 'Искать категорию',
-	// 		'all_items'         => 'Все категории',
-	// 		'parent_item'       => 'Родит. категория',
-	// 		'parent_item_colon' => 'Родит. категория:',
-	// 		'edit_item'         => 'Ред. категорию',
-	// 		'update_item'       => 'Обновить категорию',
-	// 		'add_new_item'      => 'Добавить категорию',
-	// 		'new_item_name'     => 'Новый Раздел вопроса',
-	// 		'menu_name'         => 'Категории',
-	// 	),
-	// 	'description'           => 'Рубрики для портфолио', // описание таксономии
-	// 	'public'                => true,
-	// 	'show_in_nav_menus'     => false, // равен аргументу public
-	// 	'show_ui'               => true, // равен аргументу public
-	// 	'show_tagcloud'         => false, // равен аргументу show_ui
-	// 	'hierarchical'          => true,
-	// 	'rewrite'               => array('slug'=>'portfolio', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
-	// 	'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
-    // ) );
+	register_taxonomy('portfoliocat', array('portfolio'), array(
+		'label'                 => 'Категории', // определяется параметром $labels->name
+		'labels'                => array(
+			'name'              => 'Категории работ',
+			'singular_name'     => 'Категории',
+			'search_items'      => 'Искать категорию',
+			'all_items'         => 'Все категории',
+			'parent_item'       => 'Родит. категория',
+			'parent_item_colon' => 'Родит. категория:',
+			'edit_item'         => 'Ред. категорию',
+			'update_item'       => 'Обновить категорию',
+			'add_new_item'      => 'Добавить категорию',
+			'new_item_name'     => 'Новый Раздел вопроса',
+			'menu_name'         => 'Категории',
+		),
+		'description'           => 'Рубрики для портфолио', // описание таксономии
+		'public'                => true,
+		'show_in_nav_menus'     => false, // равен аргументу public
+		'show_ui'               => true, // равен аргументу public
+		'show_tagcloud'         => false, // равен аргументу show_ui
+		'hierarchical'          => true,
+		'rewrite'               => array('slug'=>'portfolio', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
+		'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
+    ) );
 
 
 
@@ -357,30 +357,28 @@ function register_portfolio_post_type() {
 		'capability_type'     => 'post',
 		'map_meta_cap'        => true,
 		'hierarchical'        => false,
-        // 'rewrite'             => array( 'slug'=>'portfolio/%portfoliocat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
-        'rewrite'            => true,
-		// 'has_archive'         => 'portfolio',
-		'has_archive'         => true,
+		'rewrite'             => array( 'slug'=>'portfolio/%portfoliocat%', 'with_front'=>false, 'pages'=>false, 'feeds'=>false, 'feed'=>false ),
+		'has_archive'         => 'portfolio',
 		'query_var'           => true,
 		'supports'            => array( 'title', 'editor' ),
-		// 'taxonomies'          => array( 'portfoliocat' ),
+		'taxonomies'          => array( 'portfoliocat' ),
 	) );
 
 }
 ## Отфильтруем ЧПУ произвольного типа
-// add_filter('post_type_link', 'portfolio_permalink', 1, 2);
-// function portfolio_permalink( $permalink, $post ){
-// 	if( strpos($permalink, '%portfoliocat%') === false )
-// 		return $permalink;
+add_filter('post_type_link', 'portfolio_permalink', 1, 2);
+function portfolio_permalink( $permalink, $post ){
+	if( strpos($permalink, '%portfoliocat%') === false )
+		return $permalink;
 
-// 	$terms = get_the_terms($post, 'portfoliocat');
-// 	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
-// 		$term_slug = array_pop($terms)->slug;
-// 	else
-// 		$term_slug = 'cat';
+	$terms = get_the_terms($post, 'portfoliocat');
+	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
+		$term_slug = array_pop($terms)->slug;
+	else
+		$term_slug = 'cat';
 
-// 	return str_replace('%portfoliocat%', $term_slug, $permalink );
-// }
+	return str_replace('%portfoliocat%', $term_slug, $permalink );
+}
 
 
 
