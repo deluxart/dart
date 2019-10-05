@@ -445,30 +445,12 @@ add_filter( 'get_the_archive_title', function( $title ){
 
 
 
+function portfolio_archive_title( $title ) {
 
+    if(is_post_type_archive('portfolio'))
+        return 'Programme';
 
-add_filter('wp_title', 'archive_titles');
-function archive_titles($orig_title) {
-
-	global $post;
-	$post_type = $post->post_type;
-
-	$types = array(
-		array(
-			'post_type' => 'portfolio', //Your custom post type name
-			'title' => 'Title tag text here' //The title tag you'd like displayed
-		),
-	);
-	if ( is_archive() ) { //FIRST CHECK IF IT'S AN ARCHIVE
-
-		//CHECK IF THE POST TYPE IS IN THE ARRAY
-		foreach ( $types as $k => $v) {
-			if ( in_array($post_type, $types[$k])) {
-			return $types[$k]['title'];
-			}
-		}
-
-	} else { //NOT AN ARCHIVE, RETURN THE ORIGINAL TITLE
-		return $orig_title;
-	}
+    return $title;
 }
+add_filter( 'wp_title', 'portfolio_archive_title' );
+add_filter( 'get_the_archive_title', 'portfolio_archive_title' );
