@@ -195,39 +195,15 @@ register_nav_menus(array(
 ));
 
 
-
-function new_taxonomies_for_pages() {
- register_taxonomy_for_object_type( 'post_tag', 'page' );
- register_taxonomy_for_object_type( 'category', 'page' );
- }
-add_action( 'init', 'new_taxonomies_for_pages' );
-
-if ( ! is_admin() ) {
- add_action( 'pre_get_posts', 'tag_cat_archives' );
-}
-function tag_cat_archives( $wp_query ) {
-$my_taxonomies_array = array('post','page');
- if ( $wp_query->get( 'category_name' ) || $wp_query->get( 'cat' ) )
- $wp_query->set( 'post_type', $my_taxonomies_array );
-
- if ( $wp_query->get( 'tag' ) )
- $wp_query->set( 'post_type', $my_taxonomies_array );
-}
-
-
 // For custom fields
-require_once dirname( __FILE__ ) . '/menu-item-custom-fields/menu-item-custom-fields.php';
+require_once dirname( __FILE__ ) . '/inc/mic-fields/menu-item-custom-fields.php';
 require_once dirname( __FILE__ ) . '/inc/custom-walker.php';
-
 
 // Options page
 require get_template_directory() . '/inc/options_page.php';
 
-
 // For translate
 pll_register_string('Copyright', 'Copyright');
-
-
 
 // Отключение визуального редактора
 function disable_visual_editor($can)
@@ -243,21 +219,6 @@ function disable_visual_editor($can)
 }
 
 add_filter('user_can_richedit', 'disable_visual_editor');
-
-
-
-
-
-
-
-
-// Remove sspan tags for CF7
-// add_filter('wpcf7_form_elements', function($content) {
-//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-//     return $content;
-// });
-// End - Remove sspan tags for CF7
-
 
 // Function that will return our Wordpress menu
 function list_menu($atts, $content = null) {
@@ -279,7 +240,6 @@ function list_menu($atts, $content = null) {
 		'theme_location'  => ''),
 		$atts));
 
-
 	return wp_nav_menu( array(
 		'menu'            => $menu,
 		'container'       => $container,
@@ -299,13 +259,6 @@ function list_menu($atts, $content = null) {
 }
 //Create the shortcode
 add_shortcode("listmenu", "list_menu");
-
-
-
-
-
-
-
 
 
 add_action( 'init', 'register_portfolio_post_type' );
@@ -335,9 +288,6 @@ function register_portfolio_post_type() {
 		'rewrite'               => array('slug'=>'portfolio', 'hierarchical'=>false, 'with_front'=>false, 'feed'=>false ),
 		'show_admin_column'     => true, // Позволить или нет авто-создание колонки таксономии в таблице ассоциированного типа записи. (с версии 3.5)
     ) );
-
-
-
 
 	// тип записи - вопросы - portfolio
 	register_post_type('portfolio', array(
@@ -445,13 +395,6 @@ echo '</div>';
 	$out = ob_get_clean();
 	return $out;
 }
-
-
-add_filter( 'get_the_archive_title', function( $title ){
-	return preg_replace('~^[^:]+: ~', '', $title );
-});
-
-
 
 
 function remove_wpautop(){
