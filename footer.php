@@ -38,7 +38,6 @@
 			<div class="content">
 				<div>
 					<nav>
-						<ul>
         <ul class="wow-links">
            <?php
             wp_nav_menu( array(
@@ -55,7 +54,6 @@
             ) );
             ?>
         </ul>
-						</ul>
 					</nav>
 				</div>
 				<div>
