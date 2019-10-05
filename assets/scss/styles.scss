@@ -1195,6 +1195,11 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed !important;
+    }
+}
 @media (max-width: 768px) {
 	h2 {
 		font-size: 26px;
