@@ -81,7 +81,14 @@
 	</div>
 
 
-
+<div class="bg-grid">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
 
 
 
