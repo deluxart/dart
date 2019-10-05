@@ -439,18 +439,18 @@ echo '</div>';
 }
 
 
-add_filter( 'get_the_archive_title', function( $title ){
-	return preg_replace('~^[^:]+: ~', '', $title );
+add_filter( 'get_the_archive_title', function( $wp_title ){
+	return preg_replace('~^[^:]+: ~', '', $$wp_title );
 });
 
 
 
-function portfolio_archive_title( $title ) {
+// function portfolio_archive_title( $title ) {
 
-    if(is_post_type_archive('portfolio'))
-        return 'Programme';
+//     if(is_post_type_archive('portfolio'))
+//         return 'Programme';
 
-    return $title;
-}
-add_filter( 'document_title_parts', 'portfolio_archive_title' );
-add_filter( 'get_the_archive_title', 'portfolio_archive_title' );
+//     return $title;
+// }
+// add_filter( 'wp_title', 'portfolio_archive_title' );
+// add_filter( 'get_the_archive_title', 'portfolio_archive_title' );
