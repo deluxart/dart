@@ -112,7 +112,7 @@
 			</div>
 			<div class="content foot">
 				<div>
-					<a href="#" class="dart-btn">Обратный звонок <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="" class="dart-btn">Обратный звонок <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 				<div>
 					<a href="/contacts" class="feed-link">Обратная связь <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
