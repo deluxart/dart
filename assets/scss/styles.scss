@@ -404,14 +404,18 @@ header {
 		}
 
 		.telegram {
-			font-size: 14.5px;
-			font-weight: 700;
-			color: #000;
 			position: absolute;
 			right: -60px;
 			transform: rotate(90deg);
 			top: 75px;
-			padding-left: 43px;
+            padding-left: 43px;
+
+            a {
+                font-size: 14.5px;
+                font-weight: 700;
+                color: #000;
+                text-decoration: none;
+            }
 
 			&:before {
 				position: absolute;
