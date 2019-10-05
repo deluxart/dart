@@ -1,4 +1,6 @@
 $orange: #ffc000;
+$orangeHover: #ffd111;
+
 
 * {
 	margin: 0;
@@ -224,7 +226,7 @@ section {
 	outline: none;
 
 	&:hover {
-		background: $orange+#111;
+		background: $orangeHover;
 		color: #000;
 		text-decoration: none;
     }
@@ -661,7 +663,7 @@ header {
 
 						img {
 							filter: grayscale(0%);
-						}
+                        }
 
 						.datails {
 							opacity: 1;
@@ -690,7 +692,7 @@ header {
                         transition: 0.2s all;
 
                         li {
-                            display: inline-block;
+                            display: block;
                             font-size: 12px;
                             background: $orange;
                             color: #000;
@@ -707,7 +709,7 @@ header {
 				}
 
 				&:hover {
-					& > ul {
+					ul {
 						opacity: 0;
 						z-index: -1;
 					}
@@ -784,7 +786,7 @@ header {
                                     height: auto;
 
                                     &:hover {
-                                        background: $orange+#111;
+                                        background: $orangeHover;
                                         color: #000;
                                         text-decoration: none;
                                     }
