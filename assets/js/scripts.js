@@ -83,9 +83,10 @@ jQuery('.dart-menu .container .content nav ul li a[href^="#"]').click(function(e
 
 
 
-jQuery('.dart-btn.call-back').click(function(event) {
+jQuery('.dart-btn.call-back').click(function(e) {
     jQuery('.fullscreen-modal').addClass('active');
     jQuery('body').addClass('full-modal');
+    e.preventDefault();
 });
 
 jQuery('.fullscreen-modal .close').click(function(event) {
