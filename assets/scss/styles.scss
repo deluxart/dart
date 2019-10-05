@@ -229,29 +229,6 @@ section {
 		text-decoration: none;
     }
 }
-
-// for CF7
-input[type=submit].dart-btn {
-	display: inline-block;
-	color: #000;
-	font-size: 14px;
-	font-weight: 700;
-	text-decoration: none;
-	background: $orange;
-	box-shadow: 0px 14px 57px 0px rgba(0, 0, 0, 0.16);
-	border-radius: 30px;
-	padding: 15px 40px;
-	transition: 0.2s;
-	border: 0;
-	cursor: pointer;
-	outline: none;
-
-	&:hover {
-		background: $orange+#111;
-		color: #000;
-		text-decoration: none;
-    }
-}
 	.input-effect {
 		label {
 			color: $orange !important;
@@ -785,6 +762,34 @@ header {
                             & > p {
                                 text-align: center;
                             }
+
+
+                                // for CF7
+                                input[type=submit].dart-btn {
+                                    display: inline-block;
+                                    color: #000;
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    text-decoration: none;
+                                    background: $orange;
+                                    box-shadow: 0px 14px 57px 0px rgba(0, 0, 0, 0.16);
+                                    border-radius: 30px;
+                                    padding: 15px 40px;
+                                    transition: 0.2s;
+                                    border: 0;
+                                    cursor: pointer;
+                                    outline: none;
+                                    height: auto;
+
+                                    &:hover {
+                                        background: $orange+#111;
+                                        color: #000;
+                                        text-decoration: none;
+                                    }
+                                }
+
+
+
 						}
 
 						&:after {
