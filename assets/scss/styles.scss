@@ -1213,6 +1213,34 @@ footer {
 	}
 	#services .container .content { grid-template-columns: 1fr; grid-gap: 40px; }
 
+
+    .fullscreen-modal .content {
+        grid-template-columns: 1fr;
+
+        & > div {
+            &.phone {
+                border-right: none;;
+                border-bottom: 1px solid #171717;
+            }
+        }
+
+        &.foot {
+            grid-template-columns: 1fr;
+            grid-gap: 0;
+            margin-top: 20px;
+
+            & > div {
+                text-align: center;
+                padding: 0;
+
+                a.dart-btn {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+
 	header {
 		.container {
 			grid-column-gap: 30px;
