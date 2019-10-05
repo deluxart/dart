@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="portfolio" class="content-area">
+		<div class="container">
          <div class="portfolio">
 		<?php if ( have_posts() ) : ?>
 
@@ -45,7 +45,7 @@ get_header();
 		endif;
 		?>
             </div>
-		</main><!-- #main -->
+    </div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
