@@ -59,6 +59,10 @@ blur(function() {
     jQuery(this).closest('div').removeClass('input-effect');
 });
 
+jQuery('input[type=submit].dart-btn').click(function (event) {
+    jQuery('.wpcf7').removeClass('input-effect');
+});
+
 
 // Script for DART-menu
 jQuery('.dart-menu .container .content nav ul li a[href^="#"]').click(function(event) {
