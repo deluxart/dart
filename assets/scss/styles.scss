@@ -805,6 +805,29 @@ header {
                                     border-radius: 30px;
                                 }
 
+                                span {
+                                    &.wpcf7-not-valid-tip {
+                                        position: absolute;
+                                        margin: 0;
+                                        top: 0;
+                                        right: 10px;
+                                        border-radius: 0 5px 5px 0;
+                                        background: #ff1569;
+                                        font-size: 12px;
+                                        color: #fff;
+                                        padding: 2px 5px;
+
+                                        &:after {
+                                            content: '';
+                                            border: 11px solid transparent;
+                                            border-right: 10px solid #ff1569;
+                                            position: absolute;
+                                            left: -21px;
+                                            top: 0;
+                                        }
+                                    }
+                                }
+
 						}
 
 						&:after {
