@@ -18,16 +18,19 @@ get_header();
 	<div id="portfolio" class="content-area">
 		<div class="container">
             <div class="portfolio">
-                <?php
-                while ( have_posts() ) :
-                    the_post();
-                endwhile; // End of the loop.
-                ?>
+<?php
+
+  $args = array('post_type'=>array('posts', 'portfolio'));
+
+  query_posts($args);
+
+  if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+?>
 
 	            </div>
         </div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
