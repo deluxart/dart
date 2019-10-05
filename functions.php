@@ -154,8 +154,6 @@ function codeless_remove_type_attr($tag, $handle) {
 }
 
 
-
-
 /**
  * Implement the Custom Header feature.
  */
@@ -454,3 +452,12 @@ add_filter( 'get_the_archive_title', function( $title ){
 });
 
 
+
+
+function remove_wpautop(){
+   $pages = array(home);
+   if (is_page($pages)){
+      remove_filter('the_content', 'wpautop');
+   }
+}
+add_action('wp_head', 'remove_wpautop');
