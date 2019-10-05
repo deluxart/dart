@@ -447,7 +447,7 @@ add_filter( 'get_the_archive_title', function( $title ){
 
 
 
-
+add_filter('wp_title', 'archive_titles');
 function archive_titles($orig_title) {
 
 	global $post;
