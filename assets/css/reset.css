@@ -4,20 +4,7 @@ body.admin-bar header#header { top: 32px; }
 .content-page { position: relative; z-index: 1; }
 
 .wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
-    color: #D8000C;
-    background-color: #FFBABA;
-    border: 0;
-    padding: 3px 10px !important;
-    font-size: 12px;
-    display: grid !important;
-    grid-template-columns: auto 1fr;
-    grid-column-gap: 10px;
-    align-items: center;
-    position: absolute !important;
-    bottom: 0;
-    margin: 0;
-    width: 100%;
-    left: 0;
+    display: none !important;
 }
 .wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok {
     color: #4F8A10;
