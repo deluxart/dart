@@ -420,7 +420,7 @@ header {
 	ul {
 		&.socials {
 			display: grid;
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			grid-column-gap: 50px;
 
 			li {
@@ -1287,4 +1287,13 @@ footer {
 
 @media (max-width: 540px) {
 	#portfolio .container .portfolio { grid-template-columns: 1fr; }
+}
+
+
+@media (max-width: 380px) {
+    #home_slider h1 { margin-top: 0; font-size: 16px; }
+    #home_slider .da_glich { font-size: 22px; line-height: 29px; width: 117px; }
+
+    #about ul.socials li a { width: 42px; height: 42px; line-height: 42px; font-size: 21px;}
+    header a.logo { width: 90px; }
 }

@@ -3,6 +3,7 @@
 body.admin-bar header#header { top: 32px; }
 .content-page { position: relative; z-index: 1; }
 
+video { display: block; }
 
 button:focus { outline: none; }
 .wpcf7-form .wpcf7-response-output.wpcf7-validation-errors {
