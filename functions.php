@@ -470,3 +470,12 @@ function remove_recent_comments_style() {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
 add_action('widgets_init', 'remove_recent_comments_style');
+
+
+add_action( 'template_redirect', function(){
+    ob_start( function( $buffer ){
+        $buffer = str_replace( array( 'type="text/javascript"', "type='text/javascript'" ), '', $buffer );
+
+        return $buffer;
+    });
+});
