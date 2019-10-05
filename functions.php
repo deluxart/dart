@@ -417,3 +417,25 @@ function codex_add_help_text( $contextual_help, $screen_id, $screen ) {
   return $contextual_help;
 }
 add_action( 'contextual_help', 'codex_add_help_text', 10, 3 );
+
+
+## Отфильтруем ЧПУ произвольного типа
+// сам фильтр: apply_filters( 'post_type_link', $post_link, $post, $leavename, $sample );
+add_filter('post_type_link', 'portfolio_permalink', 1, 2);
+
+function portfolio_permalink( $permalink, $post ){
+	// выходим если это не наш тип записи: без холдера %products%
+	if( strpos($permalink, '%products%') === FALSE )
+		return $permalink;
+
+	// Получаем элементы таксы
+	$terms = get_the_terms($post, 'products');
+	// если есть элемент заменим холдер
+	if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) )
+		$taxonomy_slug = $terms[0]->slug;
+	// элемента нет, а должен быть...
+	else
+		$taxonomy_slug = 'no-products';
+
+	return str_replace('%products%', $taxonomy_slug, $permalink );
+}
