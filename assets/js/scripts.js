@@ -4,8 +4,6 @@
         wow.init();
 // Other scripts
 
-
-
 // Scroll Magic
 jQuery('.title').each(function(){
         var controller = new ScrollMagic.Controller();
@@ -51,7 +49,6 @@ jQuery(document).ready(function(){
 });
 // End - Personal dArt menu by delux
 
-
 jQuery('form input, form textarea').focus(function() {
       jQuery(this).closest('div').addClass('input-effect');
 }).
@@ -67,7 +64,6 @@ jQuery(".wpcf7-form-control-wrap").click(function () {
     jQuery(this).children(".wpcf7-not-valid-tip").fadeOut('slow');
 });
 
-
 // Script for DART-menu
 jQuery('.dart-menu .container .content nav ul li a[href^="#"]').click(function(event) {
     var sc = jQuery(this).attr("href"),
@@ -79,9 +75,6 @@ jQuery('.dart-menu .container .content nav ul li a[href^="#"]').click(function(e
         e.preventDefault();
 });
 // Script for DART-menu
-
-
-
 
 jQuery('.phone-btn.call-back').click(function(e) {
     jQuery('.fullscreen-modal').addClass('active');
