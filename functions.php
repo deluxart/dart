@@ -377,22 +377,6 @@ function portfolio_permalink( $permalink, $post ){
 	return str_replace('%portfoliocat%', $term_slug, $permalink );
 }
 
-add_filter( 'get_the_archive_title', function ( $title ) {
-
-    if( is_category() ) {
-
-        $title = single_cat_title( '', false );
-
-    }
-
-    return $title;
-
-});
-
-
-
-
-
 
 
 add_shortcode('portfolio', 'my_shortcode_function');
