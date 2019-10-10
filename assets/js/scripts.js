@@ -2,6 +2,7 @@
 // Other scripts
         wow = new WOW({mobile: false});
         wow.init();
+        jQuery('.extended-parallax').paroller();
 // Other scripts
 
 // Scroll Magic
