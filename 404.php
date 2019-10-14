@@ -17,7 +17,7 @@ get_header();
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'delux-art' ); ?></h1>
 				</header><!-- .page-header -->
-
+                <div class="container">
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'delux-art' ); ?></p>
 
@@ -27,7 +27,7 @@ get_header();
 
 
 
-
+                </div>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
