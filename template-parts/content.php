@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+        <div class="container">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -27,6 +28,7 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+        </div>
 	</header><!-- .entry-header -->
 
 	<?php delux_art_post_thumbnail(); ?>
