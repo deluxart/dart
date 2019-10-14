@@ -36,7 +36,7 @@ div.wpcf7-validation-errors:before {
 }
 
 
-header.entry-header {
+ header.entry-header {
     position: relative;
     background: url(../images/header_h1_bg.jpg) center no-repeat;
     background-size: cover;
@@ -45,8 +45,9 @@ header.entry-header {
     position: relative;
     color: #fff;
     background-repeat: no-repeat;
+}
 
-    &:before {
+header.entry-header:before {
         content: '';
         position: absolute;
         left: 0;
@@ -55,4 +56,3 @@ header.entry-header {
         height: 100%;
         background: #000000e0;
     }
-}
