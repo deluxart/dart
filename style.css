@@ -841,6 +841,10 @@ a:hover, a:active {
     padding: 30px 0;
 }
 
+.entry-content > p:lasht-child {
+    margin: 0;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
