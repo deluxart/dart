@@ -841,7 +841,7 @@ a:hover, a:active {
     padding: 30px 0;
 }
 
-.entry-content > p:lasht-child {
+.entry-content > p:last-child {
     margin: 0;
 }
 
