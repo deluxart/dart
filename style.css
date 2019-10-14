@@ -841,7 +841,7 @@ a:hover, a:active {
     padding: 30px 0;
 }
 
-.page-content, .entry-content, .entry-summary > p:last-child {
+.page-content > p:last-child , .entry-content > p:last-child , .entry-summary > p:last-child {
     margin: 0;
 }
 
