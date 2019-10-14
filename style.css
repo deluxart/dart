@@ -867,7 +867,6 @@ a:hover, a:active {
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
