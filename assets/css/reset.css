@@ -56,3 +56,8 @@ header.entry-header:before {
         height: 100%;
         background: #000000e0;
     }
+
+
+form.wpcf7-form > p {
+    margin: 0;
+}
