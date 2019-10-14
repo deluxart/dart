@@ -945,7 +945,11 @@ header {
 
 
 footer {
-	border-top: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
+
+    &.entry-footer {
+        display: none;
+    }
 
 	.content {
 		display: grid;
