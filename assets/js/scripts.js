@@ -50,7 +50,7 @@ jQuery(document).ready(function(){
 });
 // End - Personal dArt menu by delux
 
-jQuery('form input, form textarea').focus(function() {
+jQuery('form input.i-effect, form textarea.i-effect').focus(function() {
       jQuery(this).closest('div').addClass('input-effect');
 }).
 blur(function() {
