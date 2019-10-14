@@ -17,17 +17,17 @@
 	</header><!-- .entry-header -->
 
 	<?php delux_art_post_thumbnail(); ?>
+    <div class="container">
+        <div class="entry-content">
 
-	<div class="entry-content">
-        <div class="container">
-		<?php
-		the_content();
+            <?php
+            the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'delux-art' ),
-			'after'  => '</div>',
-		) );
-		?>
+            wp_link_pages( array(
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'delux-art' ),
+                'after'  => '</div>',
+            ) );
+            ?>
         </div>
 	</div><!-- .entry-content -->
 
