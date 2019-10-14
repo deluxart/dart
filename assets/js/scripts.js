@@ -110,5 +110,14 @@ jQuery('.portfolio > div:nth-child(6)').attr('data-wow-delay', '0.7s');
 
 
 
+jQuery(document).ready(function () {
+    jQuery("a.dart-btn.call-back").click(function () {
+        elementClick = jQuery(this).attr("href")
+        destination = jQuery(elementClick).offset().top;
+        jQuery("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination - 100 }, 1100);
+        return false;
+    });
+});
+
 
 
