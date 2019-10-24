@@ -149,6 +149,14 @@ add_action( 'wp_enqueue_scripts', 'delux_art_scripts' );
 add_filter('style_loader_tag', 'codeless_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'codeless_remove_type_attr', 10, 2);
 
+
+function styles_for_admin(){
+    wp_enqueue_style("custom-style-admin",get_bloginfo('stylesheet_directory')."/assets/css/for_admin.css");
+}
+add_action('admin_head', 'styles_for_admin');
+
+
+
 function codeless_remove_type_attr($tag, $handle) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }

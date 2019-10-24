@@ -45,7 +45,7 @@ function theme_options_do_page() { global $select_options; if ( ! isset( $_REQUE
 
 <div class="postbox">
 <div class="inside">
-<table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
+<table cellspacing="2" cellpadding="5" class="form-table custom-table">
     <tbody>
 
     <tr class="form-field">
