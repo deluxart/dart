@@ -285,6 +285,10 @@ header {
 	a.logo {
 		width: 101px;
         display: block;
+
+        svg {
+            display: block;
+        }
 	}
 
 	.phone {
