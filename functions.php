@@ -302,7 +302,7 @@ function register_portfolio_post_type() {
 		'label'               => 'Портфолио',
 		'labels'              => array(
 			'name'          => 'Портфолио',
-			'singular_name' => 'Вопрос',
+			'singular_name' => 'Портфолио',
 			'menu_name'     => 'Портфолио',
 			'all_items'     => 'Все работы',
 			'add_new'       => 'Добавить работу',
