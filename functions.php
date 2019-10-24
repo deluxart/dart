@@ -200,7 +200,7 @@ require_once dirname( __FILE__ ) . '/inc/mic-fields/menu-item-custom-fields.php'
 require_once dirname( __FILE__ ) . '/inc/custom-walker.php';
 
 // Options page
-require get_template_directory() . '/inc/options_page.php';
+require get_template_directory() . '/inc/options-page.php';
 
 // For translate
 pll_register_string('Copyright', 'Copyright');
