@@ -4,7 +4,7 @@ body.admin-bar header#header { top: 32px; }
 body.page-id-60 #header .container > .head-btn { display: none; }
 
 @media (min-width: 768px) {
-    body.page-id-60 #header { height: 84px; }
+    body.page-id-60 header#header { padding: 27px 0; }
 }
 
 .content-page { position: relative; z-index: 1; }
