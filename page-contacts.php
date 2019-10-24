@@ -18,15 +18,15 @@ $page_description = get_field( 'page_description' );
 
 	<section id="feedback" class="content-area page">
 		<div class="container">
-		<h2 class="title wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.5s"><?php the_title(); ?>
+		<div class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.2s"><h2 class="title"><?php the_title(); ?>
         <?php if ( $page_description ): ?>
             <span><?php the_field( 'page_description' ); ?></span>
         <?php endif; ?>
-        </h2>
+        </h2></div>
 
                 <?php the_content(); ?>
         </div><!-- #main -->
-        	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
+        <div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left:10%; " data-paroller-direction="horizontal" data-paroller-factor="0.1" ><img src="/wp-content/themes/dart/assets/images/Contacts.svg" alt="" /></div>
 	</section><!-- #primary -->
 
 <?php
