@@ -14,7 +14,7 @@ function theme_options_do_page() { global $select_options; if ( ! isset( $_REQUE
 ?>
 
 <div class="wrap">
-<?php screen_icon(); echo "<h2>". __( 'Базовые настройки', 'WP-Dart' ) . "</h2>"; ?>
+<?php echo "<h2>". __( 'Базовые настройки', 'WP-Dart' ) . "</h2>"; ?>
 
     <?php if (!empty($notice)): ?>
     <div id="notice" class="error"><p><?php echo $notice ?></p></div>
