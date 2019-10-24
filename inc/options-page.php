@@ -7,7 +7,7 @@ function theme_options_init(){
 }
 
 function theme_options_add_page() {
-    add_menu_page( __( 'Базовые', 'WP-Dart' ), __( 'Базовые', 'WP-Dart' ), 'edit_theme_options', 'price_options', 'theme_options_do_page', 'dashicons-editor-kitchensink', 4 );
+    add_theme_page( __( 'Базовые', 'WP-Dart' ), __( 'Базовые', 'WP-Dart' ), 'edit_theme_options', 'dart_theme_options', 'theme_options_do_page' );
 }
 function theme_options_do_page() { global $select_options; if ( ! isset( $_REQUEST['settings-updated'] ) ) $_REQUEST['settings-updated'] = false;
     // here we adding our custom meta box
