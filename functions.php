@@ -406,7 +406,7 @@ echo '</div>';
 
 // Чистим от муосра добявляемого WP
 function remove_wpautop(){
-   $pages = array(home);
+   $pages = array(66);
    if (is_page($pages)){
       remove_filter('the_content', 'wpautop');
    }
