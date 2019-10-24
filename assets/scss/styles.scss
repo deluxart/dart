@@ -730,7 +730,15 @@ header {
 
 #feedback {
 	overflow: hidden;
-	position: relative;
+    position: relative;
+
+    &.page {
+        margin-top: 30px;
+
+        .container {
+            padding-bottom: 0;;
+        }
+    }
 		.container {
 				padding-top: 80px;
 				padding-bottom: 80px;
