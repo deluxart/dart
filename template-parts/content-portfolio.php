@@ -11,9 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header content-portfolio-php">
+        <div class="container">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        </div>
 	</header><!-- .entry-header -->
-
+    <div class="container">
 	<?php delux_art_post_thumbnail(); ?>
 
 	<div class="entry-content">
@@ -48,5 +50,6 @@
 			);
 			?>
 		</footer><!-- .entry-footer -->
+        </div>
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
