@@ -275,7 +275,7 @@ header {
 		border-bottom: 0;
 	}
 
-	& > .container {
+	&#header > .container {
 		display: grid;
 		grid-template-columns: 1fr auto auto auto;
 		grid-column-gap: 40px;
@@ -1250,7 +1250,7 @@ footer {
     }
 
 
-	header {
+	header#header {
 		& > .container {
 			grid-column-gap: 30px;
 			grid-template-columns: 1fr auto auto;
