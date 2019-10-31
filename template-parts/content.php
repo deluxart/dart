@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header tteesstt">
         <div class="container">
 		<?php
 		if ( is_singular() ) :
