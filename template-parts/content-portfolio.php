@@ -21,6 +21,32 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
     <div class="container">
 	<?php delux_art_post_thumbnail(); ?>
 
+
+
+<?php $usluga_array = get_field( 'usluga' ); ?>
+<?php if ( $usluga_array ): ?>
+	<?php foreach ( $usluga_array as $usluga_item ): ?>
+	 	<?php echo $usluga_item; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+
+
+Проект: <?php the_field( 'proekt' ); ?>
+Ссылка на проект: <?php the_field( 'ssylka_na_proekt' ); ?>
+Дата выполения: <?php the_field( 'data_proekta' ); ?>
+
+
+<?php // metki ( value )
+$metki_array = get_field( 'metki' );
+if ( $metki_array ):
+	foreach ( $metki_array as $metki_item ):
+	 	echo $metki_item;
+	endforeach;
+endif; ?>
+
+
+
 	<div class="entry-content">
 		<?php
 		the_content();
