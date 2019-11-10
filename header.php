@@ -28,6 +28,24 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+
+	<div class="b-preloader">
+		<div class="container">
+			<div class="b-preloader-items">
+				<div class="b-preloader-item">Landing Page</div>
+				<div class="b-preloader-item">Корпоративные сайты</div>
+				<div class="b-preloader-item">WOW-сайты</div>
+				<div class="b-preloader-item">Брендинг</div>
+				<div class="b-preloader-item">Маркетинг-кит</div>
+				<div class="b-preloader-item">SEO продвижение</div>
+				<div class="b-preloader-item">Реклама и SMM</div>
+				<div class="b-preloader-item">CRM и систематизация</div>
+				<div class="b-preloader-item"><img src="images/logo-landingua-1.svg" alt=""></div>
+			</div>
+		</div>
+    </div>
+
 <header id="header">
 	<div class="container">
 		<div><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">

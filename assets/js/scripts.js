@@ -5,6 +5,24 @@
         jQuery('.extended-parallax').paroller();
 // Other scripts
 
+// Preloader
+(function () {
+    var preloader = jQuery('.b-preloader');
+    if (preloader.length) {
+        landingua.functions.cookieSet('back', location.origin + location.pathname);
+    }
+    else {
+        var back = landingua.functions.cookieGet('back');
+        jQuery('.main-wrapper').addClass('short-preloader');
+        if (typeof back !== 'undefined') {
+            jQuery('.b-header-back').each(function () {
+                jQuery(this).attr('href', back + '#cases');
+            });
+        }
+    }
+})();
+// End Preloader
+
 // Scroll Magic
 jQuery('.title').each(function(){
         var controller = new ScrollMagic.Controller();
