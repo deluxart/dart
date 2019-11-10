@@ -271,13 +271,14 @@ header {
     }
 
     &.page_description {
+        overflow: hidden;
         h1 {
             padding-bottom: 0;
         }
 
         span {
             display: block;
-            padding-bottom: 25px;
+            margin-bottom: 25px;
             padding-left: 43px;
             color: #fff;
             z-index: 1;
