@@ -1,4 +1,4 @@
-var jQuery( = {
+var landingua = {
     cursorPosition: {
         x: Math.ceil(jQuery(window).width() / 2),
         y: Math.ceil(jQuery(window).height() / 2)
@@ -66,7 +66,7 @@ var jQuery( = {
         },
         scrollLock: function () {
             jQuery('html').addClass('scroll-lock');
-            jQuery('.main-wrapper, .b-fixed-content, .b-header').css('padding-right', jQuery(.scrollWidth + 'px');
+            jQuery('.main-wrapper, .b-fixed-content, .b-header').css('padding-right', landingua.scrollWidth + 'px');
         },
         scrollUnlock: function () {
             jQuery('html').removeClass('scroll-lock');
@@ -85,8 +85,8 @@ var jQuery( = {
             var windowCenterX = jQuery(window).width() / 2;
             var windowCenterY = jQuery(window).height() / 2;
             return {
-                x: Math.ceil(jQuery(.cursorPosition.x - windowCenterX),
-                y: Math.ceil(jQuery(.cursorPosition.y - windowCenterY)
+                x: Math.ceil(landingua.cursorPosition.x - windowCenterX),
+                y: Math.ceil(landingua.cursorPosition.y - windowCenterY)
             };
         },
         getBlockScrollProgress: function (block, bottom) {
@@ -167,13 +167,13 @@ var preloader = {
 			setTimeout(function () {
 				jQuery('.b-main-homescreen-award').addClass('show');
 			}, 1000);
-			jQuery(.functions.cookieSet('cached', '1');
+			landingua.functions.cookieSet('cached', '1');
 		}
 	}
 };
 
 jQuery(document).ready(function() {
-	if (preloader.enabled && typeof jQuery(.functions.cookieGet('cached') === 'undefined') {
+	if (preloader.enabled && typeof landingua.functions.cookieGet('cached') === 'undefined') {
 		(function() {
 			var block = jQuery('.b-preloader');
 			var items = block.find('.b-preloader-item');
