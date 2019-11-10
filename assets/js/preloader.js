@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
 		})();
 	}
 	else {
-		preloader.functions.finish();
+		// preloader.functions.finish();
 	}
 });
 
