@@ -273,15 +273,15 @@ header {
     &.page_description {
         h1 {
             padding-bottom: 0;
-
-            span {
-                display: block;
-                padding-bottom: 0.67em;
-                color: #fff;
-                z-index: 1;
-                position: relative;
-            }
         }
+
+        span {
+             display: block;
+             padding-bottom: 0.67em;
+             color: #fff;
+              z-index: 1;
+             position: relative;
+         }
     }
 
 	&.header-fixed {
