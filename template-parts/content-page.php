@@ -10,7 +10,7 @@ $page_description = get_field( 'page_description' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header <?php if ( $page_description ): ?>page_description<?php endif; ?>">
         <div class="container">
 		    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
             <?php if ( $page_description ): ?>
