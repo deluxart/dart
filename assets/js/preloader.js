@@ -26,13 +26,13 @@ var preloader = {
 			setTimeout(function () {
 				jQuery('.b-main-homescreen-award').addClass('show');
 			}, 1000);
-			landingua.functions.cookieSet('cached', '1');
+			deluxart.functions.cookieSet('cached', '1');
 		}
 	}
 };
 
 jQuery(document).ready(function() {
-	if (preloader.enabled && typeof landingua.functions.cookieGet('cached') === 'undefined') {
+	if (preloader.enabled && typeof deluxart.functions.cookieGet('cached') === 'undefined') {
 		(function() {
 			var block = jQuery('.b-preloader');
 			var items = block.find('.b-preloader-item');

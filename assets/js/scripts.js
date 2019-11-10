@@ -8,7 +8,7 @@
 // Preloader
 
 
-var landingua = {
+var deluxart = {
     cursorPosition: {
         x: Math.ceil(jQuery(window).width() / 2),
         y: Math.ceil(jQuery(window).height() / 2)
@@ -76,7 +76,7 @@ var landingua = {
         },
         scrollLock: function () {
             jQuery('html').addClass('scroll-lock');
-            jQuery('.main-wrapper, .b-fixed-content, .b-header').css('padding-right', landingua.scrollWidth + 'px');
+            jQuery('.main-wrapper, .b-fixed-content, .b-header').css('padding-right', deluxart.scrollWidth + 'px');
         },
         scrollUnlock: function () {
             jQuery('html').removeClass('scroll-lock');
@@ -95,8 +95,8 @@ var landingua = {
             var windowCenterX = jQuery(window).width() / 2;
             var windowCenterY = jQuery(window).height() / 2;
             return {
-                x: Math.ceil(landingua.cursorPosition.x - windowCenterX),
-                y: Math.ceil(landingua.cursorPosition.y - windowCenterY)
+                x: Math.ceil(deluxart.cursorPosition.x - windowCenterX),
+                y: Math.ceil(deluxart.cursorPosition.y - windowCenterY)
             };
         },
         getBlockScrollProgress: function (block, bottom) {
@@ -160,10 +160,10 @@ var landingua = {
 (function () {
     var preloader = jQuery('.b-preloader');
     if (preloader.length) {
-        landingua.functions.cookieSet('back', location.origin + location.pathname);
+        deluxart.functions.cookieSet('back', location.origin + location.pathname);
     }
     else {
-        var back = landingua.functions.cookieGet('back');
+        var back = deluxart.functions.cookieGet('back');
         jQuery('.main-wrapper').addClass('short-preloader');
         if (typeof back !== 'undefined') {
             jQuery('.b-header-back').each(function () {
