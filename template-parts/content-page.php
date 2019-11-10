@@ -6,15 +6,15 @@
  *
  * @package delux-art
  */
-$korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
+$page_description = get_field( 'page_description' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <div class="container">
 		    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-            <?php if ( $korotkoe_opisanie ): ?>
-                <span><?php the_field( 'korotkoe_opisanie' ); ?></span>
+            <?php if ( $page_description ): ?>
+                <span><?php the_field( 'page_description' ); ?></span>
             <?php endif; ?>
         </div>
 	</header><!-- .entry-header -->
