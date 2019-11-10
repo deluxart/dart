@@ -32,7 +32,8 @@ var preloader = {
 };
 
 jQuery(document).ready(function() {
-	if (preloader.enabled && typeof deluxart.functions.cookieGet('cached') === 'undefined') {
+    // if (preloader.enabled && typeof deluxart.functions.cookieGet('cached') === 'undefined') {
+    if (preloader.enabled) {
 		(function() {
 			var block = jQuery('.b-preloader');
 			var items = block.find('.b-preloader-item');
