@@ -56,12 +56,12 @@ jQuery(document).ready(function() {
                             block.addClass('hide').removeClass('bg-black');
                             // jQuery('body').removeClass('preloader');
 							preloader.functions.finish();
-                        }, 1800);
+                        }, 2800);
                         setTimeout(function () {
                             // block.addClass('hide').removeClass('bg-black');
                             jQuery('body').removeClass('preloader');
                             // preloader.functions.finish();
-                        }, 2800);
+                        }, 1800);
 				}, n * 400);
 			}
 			if (block.length) {
