@@ -55,13 +55,13 @@ jQuery(document).ready(function() {
 						setTimeout(function() {
                             block.addClass('hide').removeClass('bg-black');
                             preloader.functions.finish();
-                            jQuery('body').removeClass('preloader');
+                            // jQuery('body').removeClass('preloader');
 						}, 1800);
 				}, n * 400);
 			}
 			if (block.length) {
                 block.addClass('bg-black show');
-                jQuery('body').addClass('preloader');
+                // jQuery('body').addClass('preloader');
 				setTimeout(function() {
 					items.not(':last-child').addClass('zoom-out');
 					for (i = 0; i < items.length; i++) {
