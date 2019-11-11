@@ -53,13 +53,15 @@ jQuery(document).ready(function() {
 						}, 1800);
 						*/
 						setTimeout(function() {
-							block.addClass('hide').removeClass('bg-black');
+                            block.addClass('hide').removeClass('bg-black');
+                            jQuery('body').removeClass('preloader');
 							preloader.functions.finish();
 						}, 1800);
 				}, n * 400);
 			}
 			if (block.length) {
-				block.addClass('bg-black show');
+                block.addClass('bg-black show');
+                jQuery('body').addClass('preloader');
 				setTimeout(function() {
 					items.not(':last-child').addClass('zoom-out');
 					for (i = 0; i < items.length; i++) {
