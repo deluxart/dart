@@ -27,7 +27,6 @@ header.entry-header:before { content: ''; position: absolute; left: 0; top: 0; w
 
 /* Preloader */
 
-
 /* .b-preloader { left: 0; right: 100%; top: 0; bottom: 0;  }
 .b-preloader.bg-black { background: #000; }
 .b-preloader.show { right: 0%; }
