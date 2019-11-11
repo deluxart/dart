@@ -36,7 +36,8 @@ jQuery(document).ready(function() {
     if (preloader.enabled) {
 		(function() {
 			var block = jQuery('.b-preloader');
-			var items = block.find('.b-preloader-item');
+            var items = block.find('.b-preloader-item');
+            var items_last = block.find('.b-preloader-item.last');
 			function preloaderSetItem(n) {
 				setTimeout(function() {
 					items.eq(n).addClass('show').prev().removeClass('show');
@@ -63,7 +64,8 @@ jQuery(document).ready(function() {
                 block.addClass('bg-black show');
                 jQuery('body').addClass('preloader');
 				setTimeout(function() {
-					items.not(':last-child').addClass('zoom-out');
+                    items.not(':last-child').addClass('zoom-out');
+                    items_last.addClass('zoom-in');
 					for (i = 0; i < items.length; i++) {
 						preloaderSetItem(i);
 					}
