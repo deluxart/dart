@@ -1032,7 +1032,7 @@ footer {
     position: fixed;
     width: 100%;
     padding: 0;
-    z-index: 112;
+	z-index: 999999;
     -webkit-transform-origin: 50% 0;
     transform-origin: 50% 0;
     -webkit-perspective-origin: 50% 100%;
@@ -1094,7 +1094,6 @@ footer {
 		transform: perspective(900px) rotateX(0);
 		opacity: 1;
 		height: 100%;
-		z-index: 999999;
     }
 
     h2 {
