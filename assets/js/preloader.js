@@ -54,14 +54,9 @@ jQuery(document).ready(function() {
 						*/
 						setTimeout(function() {
                             block.addClass('hide').removeClass('bg-black');
-                            // jQuery('body').removeClass('preloader');
-							// preloader.functions.finish();
-                        }, 1800);
-                        setTimeout(function () {
-                            // block.addClass('hide').removeClass('bg-black');
-                            jQuery('body').removeClass('preloader');
                             preloader.functions.finish();
-                        }, 2800);
+                            jQuery('body').removeClass('preloader');
+						}, 1800);
 				}, n * 400);
 			}
 			if (block.length) {
