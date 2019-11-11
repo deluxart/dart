@@ -27,7 +27,7 @@ header.entry-header:before { content: ''; position: absolute; left: 0; top: 0; w
 
 /* Preloader */
 
-.b-preloader { position: fixed; z-index: 9999; left: 0; right: 100%; top: 0; bottom: 0; overflow: hidden; background: #fff; -webkit-transition: all 0.9s ease; -o-transition: all 0.9s ease; transition: all 0.9s ease; }
+.b-preloader { position: fixed; z-index: 9999; left: 0; right: 100%; top: 0; bottom: 0; overflow: hidden; background: #000; -webkit-transition: all 0.9s ease; -o-transition: all 0.9s ease; transition: all 0.9s ease; }
 .b-preloader .container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; height: 100%; }
 .b-preloader.bg-black { background: #000; }
 .b-preloader.show { right: 0%; }
