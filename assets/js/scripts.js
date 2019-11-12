@@ -4,7 +4,7 @@
         wow.init();
         jQuery('.extended-parallax').paroller();
 // Other scripts
-
+var $ = jQuery.noConflict();
 // Preloader
 
 
