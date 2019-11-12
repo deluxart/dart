@@ -155,7 +155,7 @@ add_filter('script_loader_tag', 'codeless_remove_type_attr', 10, 2);
 // Подключение внешнего упакованного jQuery в футер {
 function my_jQuery() {
 	wp_deregister_script('jquery');
-	wp_register_script('jquery','http://code.jquery.com/jquery.min.js','','AlwaysTheLatestVersion',true);
+	wp_register_script('jquery','http://code.jquery.com/jquery.min.js','','123',true);
 }
 if( !is_admin()){add_action('init','my_jQuery');}
 // } Подключение внешнего упакованного jQuery в футер
