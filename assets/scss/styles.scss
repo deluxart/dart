@@ -1307,12 +1307,14 @@ footer {
 	#portfolio .container h2 span { right: -25px; left: 0; bottom: -40px; }
 	#portfolio .container h2 span:before { left: 0; }
 
-	#feedback .container .content > div:nth-child(1) { padding: 40px; }
+    #feedback .container .content > div:nth-child(1), #feedback .container .content .home_form form { padding: 30px; }
 
 	#home_slider { padding: 30px 0; }
 	.content-page { padding-top: 68px; }
 
-	#about .container, #services .container, #portfolio .container, #feedback .container { padding-top: 40px; padding-bottom: 40px; }
+    #about .container, #services .container, #portfolio .container, #feedback .container { padding-top: 40px; padding-bottom: 40px; }
+    #feedback .container .content .contacts { padding: 0 6px; }
+    #feedback .container .content { grid-gap: 20px; }
 	.dart-btn { box-shadow: 0px 8px 37px 0px rgba(0, 0, 0, 0.21); }
 
 	#home_slider h1 { font-size: 18px; margin-bottom: 12px; padding: 0 20px; }
