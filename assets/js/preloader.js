@@ -8,24 +8,6 @@ var preloader = {
 			while ((+new Date - start) < ms);
 		},
 		finish: function() {
-			jQuery('.main-wrapper').addClass('show');
-			jQuery([
-				'.b-main-homescreen-bg',
-				'.b-main-homescreen-text',
-				'.b-main-homescreen-title p',
-				'.b-landing-homescreen-text',
-				'.b-landing-homescreen-title p',
-				'.b-landing-homescreen-subtitle p'
-			].join(',')).addClass('animate');
-			setTimeout(function () {
-				jQuery('.b-main-homescreen-line').addClass('show');
-			}, 2000);
-			setTimeout(function () {
-				jQuery('.b-main-homescreen-button').addClass('show');
-			}, 500);
-			setTimeout(function () {
-				jQuery('.b-main-homescreen-award').addClass('show');
-			}, 1000);
 			deluxart.functions.cookieSet('cached', '1');
 		}
 	}
