@@ -46,7 +46,7 @@ var deluxart = {
 
 
 (function () {
-    var preloader = jQuery('.b-preloader');
+    var preloader = jQuery('.dart-preloader');
     if (preloader.length) {
         deluxart.functions.cookieSet('back', location.origin + location.pathname);
     }
