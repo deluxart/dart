@@ -127,11 +127,6 @@ var deluxart = {
 };
 
 
-
-
-
-
-
 (function () {
     var preloader = jQuery('.b-preloader');
     if (preloader.length) {
@@ -139,12 +134,6 @@ var deluxart = {
     }
     else {
         var back = deluxart.functions.cookieGet('back');
-        jQuery('.main-wrapper').addClass('short-preloader');
-        if (typeof back !== 'undefined') {
-            jQuery('.b-header-back').each(function () {
-                jQuery(this).attr('href', back + '#cases');
-            });
-        }
     }
 })();
 // End Preloader
