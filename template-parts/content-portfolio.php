@@ -11,7 +11,7 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="container">
-	<header class="content-portfolio-php"></header>
+	<header class="content-portfolio-php">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <?php if ( $korotkoe_opisanie ): ?>
             <span><?php the_field( 'korotkoe_opisanie' ); ?></span>
