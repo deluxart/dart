@@ -74,15 +74,15 @@ jQuery(function(){
     jQuery(window).scroll(function() {
         var topHead = jQuery(document).scrollTop();
         if (topHead > 80) {
-            jQuery('header').addClass('header-fixed');
+            jQuery('header#header').addClass('header-fixed');
         } else {
-            jQuery('header').removeClass('header-fixed');
+            jQuery('header#header').removeClass('header-fixed');
         }
     });
 });
 jQuery(window).load(function(){
      if (jQuery(document).scrollTop() > 80) {
-         jQuery('header').addClass('header-fixed');
+         jQuery('header#header').addClass('header-fixed');
      }
 });
 // End - Add fixed class for header
