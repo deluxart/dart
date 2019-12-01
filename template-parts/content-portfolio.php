@@ -7,6 +7,10 @@
  * @package delux-art
  */
 $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
+$proekt = get_field( 'proekt' );
+$project_link = get_field( 'ssylka_na_proekt' );
+$project_date = get_field( 'data_proekta' );
+$usluga_array = get_field( 'usluga' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,41 +25,36 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
 	    <div class="cover"><?php delux_art_post_thumbnail(); ?></div>
         <div class="description">
 
+            <div class="text">
+                <div class="entry-content">
+                    <?php
+                    the_content();
 
-<?php $usluga_array = get_field( 'usluga' ); ?>
-<?php if ( $usluga_array ): ?>
-	<?php foreach ( $usluga_array as $usluga_item ): ?>
-	 	<?php echo $usluga_item; ?>
-	<?php endforeach; ?>
-<?php endif; ?>
+                    wp_link_pages( array(
+                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'delux-art' ),
+                        'after'  => '</div>',
+                    ) );
+                    ?>
+                </div>
+            </div>
 
+            <div class="details">
 
+                <?php if ( $usluga_array ): ?>
+                    <ul class="cat-list">
+                        <?php foreach ( $usluga_array as $usluga_item ): ?>
+                            <li><?php echo $usluga_item; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
 
-Проект: <?php the_field( 'proekt' ); ?><br/>
-Ссылка на проект: <?php the_field( 'ssylka_na_proekt' ); ?><br/>
-Дата выполения: <?php the_field( 'data_proekta' ); ?>
+                <ul class="details-list">
+                    <?php if( $proekt ){ ?><li><strong>Проект:</strong> <?php the_field( 'proekt' ); ?></li><?php } ?>
+                    <?php if( $proekt_link ){ ?><li><strong>Ссылка на проект:</strong> <?php the_field( 'ssylka_na_proekt' ); ?></li><?php } ?>
+                    <?php if( $proekt_date ){ ?><li><strong>Дата:</strong> <?php the_field( 'data_proekta' ); ?></li><?php } ?>
+                </ul>
+            </div>
 
-
-<?php // metki ( value )
-$metki_array = get_field( 'metki' );
-if ( $metki_array ):
-	foreach ( $metki_array as $metki_item ):
-	 	echo $metki_item;
-	endforeach;
-endif; ?>
-
-
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'delux-art' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
     </div>
 </div>
 	<?php if ( get_edit_post_link() ) : ?>
