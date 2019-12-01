@@ -50,8 +50,13 @@ $usluga_array = get_field( 'usluga' );
                 <?php endif; ?>
 
                 <ul class="details-list">
-                    <?php if( $project ){ ?><li><strong>Проект:</strong> <?php the_field( 'proekt' ); ?></li><?php } ?>
-                    <?php if( $project_link ){ ?><li><strong>Ссылка на проект:</strong> <?php the_field( 'ssylka_na_proekt' ); ?></li><?php } ?>
+                    <?php if( $project ){ ?><li><strong>Проект:</strong>
+                        <?php if( $project_link ){ ?>
+                            <a href="<?php the_field( 'ssylka_na_proekt' ); ?>" target="_blank"><?php the_field( 'proekt' ); ?>
+                        <?php } else { ?>
+                            <?php the_field( 'proekt' ); ?>
+                        <?php } ?>
+                    </li><?php } ?>
                     <?php if( $project_date ){ ?><li><strong>Дата:</strong> <?php the_field( 'data_proekta' ); ?></li><?php } ?>
                 </ul>
             </div>
