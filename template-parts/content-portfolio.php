@@ -18,8 +18,8 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
         <?php endif; ?>
 	</header><!-- .entry-header -->
     <div class="content">
-	<?php delux_art_post_thumbnail(); ?>
-
+	    <div class="cover"><?php delux_art_post_thumbnail(); ?></div>
+        <div class="description">
 
 
 <?php $usluga_array = get_field( 'usluga' ); ?>
@@ -56,6 +56,7 @@ endif; ?>
 		) );
 		?>
 	</div><!-- .entry-content -->
+    </div>
 </div>
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
