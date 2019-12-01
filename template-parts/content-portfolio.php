@@ -10,15 +10,14 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header content-portfolio-php">
-        <div class="container">
+    <div class="container">
+	<header class="content-portfolio-php"></header>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <?php if ( $korotkoe_opisanie ): ?>
             <span><?php the_field( 'korotkoe_opisanie' ); ?></span>
         <?php endif; ?>
-        </div>
 	</header><!-- .entry-header -->
-    <div class="container">
+    <div class="content">
 	<?php delux_art_post_thumbnail(); ?>
 
 
@@ -32,8 +31,8 @@ $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
 
 
 
-Проект: <?php the_field( 'proekt' ); ?>
-Ссылка на проект: <?php the_field( 'ssylka_na_proekt' ); ?>
+Проект: <?php the_field( 'proekt' ); ?><br/>
+Ссылка на проект: <?php the_field( 'ssylka_na_proekt' ); ?><br/>
 Дата выполения: <?php the_field( 'data_proekta' ); ?>
 
 
@@ -57,7 +56,7 @@ endif; ?>
 		) );
 		?>
 	</div><!-- .entry-content -->
-
+</div>
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
