@@ -112,7 +112,7 @@
 					<a href="#" class="dart-btn"><?php pll_e('back_call','dart'); ?> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 				<div>
-					<a href="/contacts" class="feed-link"><?php pll_e('feed_back','dart'); ?><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="/contacts" class="feed-link"><?php pll_e('feed_back','dart'); ?> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
