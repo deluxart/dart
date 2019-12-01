@@ -1215,11 +1215,14 @@ footer {
         }
 
         .content {
-                box-shadow: 6px 13px 57px 0px rgba(0,0,0,0.06);
+                box-shadow: 6px 13px 57px 0px rgba(0,0,0,0.1);
                 background: #fff;
                 position: relative;
+                margin-bottom: 60px;
 
                 .cover {
+                    border-bottom: 1px solid #eeeeee;
+
                     img {
                         display: block;
                     }
@@ -1227,6 +1230,10 @@ footer {
 
                 .description {
                     padding: 50px;
+                }
+
+                .entry-content {
+                    padding: 0;
                 }
         }
     }
