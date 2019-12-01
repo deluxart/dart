@@ -51,7 +51,7 @@ $usluga_array = get_field( 'usluga' );
                 <ul class="details-list">
                     <?php if( $proekt ){ ?><li><strong>Проект:</strong> <?php the_field( 'proekt' ); ?></li><?php } ?>
                     <?php if( $proekt_link ){ ?><li><strong>Ссылка на проект:</strong> <?php the_field( 'ssylka_na_proekt' ); ?></li><?php } ?>
-                    <?php if( $proekt_date ){ ?><li><strong>Дата:</strong> <?php the_field( 'data_proekta' ); ?></li><?php } ?>
+                    <?php if( $project_date ){ ?><li><strong>Дата:</strong> <?php the_field( 'data_proekta' ); ?></li><?php } ?>
                 </ul>
             </div>
 
