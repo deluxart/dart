@@ -1230,6 +1230,15 @@ footer {
 
                 .description {
                     padding: 50px;
+                    display: grid;
+                    grid-template-columns: 1fr 25%;
+                    grid-gap: 50px;
+
+                    .details {
+                        .cat-list {
+                            margin-bottom: 30px;
+                        }
+                    }
                 }
 
                 .entry-content {

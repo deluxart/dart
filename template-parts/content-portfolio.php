@@ -26,6 +26,7 @@ $usluga_array = get_field( 'usluga' );
         <div class="description">
 
             <div class="text">
+                <h4>Описание</h4>
                 <div class="entry-content">
                     <?php
                     the_content();
@@ -39,7 +40,7 @@ $usluga_array = get_field( 'usluga' );
             </div>
 
             <div class="details">
-
+                <h4>Детали</h4>
                 <?php if ( $usluga_array ): ?>
                     <ul class="cat-list">
                         <?php foreach ( $usluga_array as $usluga_item ): ?>
