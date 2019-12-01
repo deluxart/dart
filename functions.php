@@ -147,52 +147,25 @@ function delux_art_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'delux_art_scripts' );
-
 add_filter('style_loader_tag', 'codeless_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'codeless_remove_type_attr', 10, 2);
-
 
 function styles_for_admin(){
     wp_enqueue_style("custom-style-admin",get_bloginfo('stylesheet_directory')."/assets/css/for_admin.css");
 }
 add_action('admin_head', 'styles_for_admin');
 
-
-
 function codeless_remove_type_attr($tag, $handle) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
-
-
-/**
- * Implement the Custom Header feature.
- */
 require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-
 
 register_nav_menus(array(
 	'mibile_nav'    => 'Мобильная навигация',
