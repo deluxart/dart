@@ -90,7 +90,7 @@
 <div class="fullscreen-modal">
 	<div class="container">
 		<div class="fs-cont">
-			<h2>Контакты</h2>
+			<h2><?php pll_e('contacts','dart'); ?></h2>
 			<div class="content">
 				<div class="phone">
 					<i class="fa fa-phone" aria-hidden="true"></i>
