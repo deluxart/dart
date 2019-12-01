@@ -7,7 +7,7 @@
  * @package delux-art
  */
 $korotkoe_opisanie = get_field( 'korotkoe_opisanie' );
-$proekt = get_field( 'proekt' );
+$project = get_field( 'proekt' );
 $project_link = get_field( 'ssylka_na_proekt' );
 $project_date = get_field( 'data_proekta' );
 $usluga_array = get_field( 'usluga' );
@@ -49,8 +49,8 @@ $usluga_array = get_field( 'usluga' );
                 <?php endif; ?>
 
                 <ul class="details-list">
-                    <?php if( $proekt ){ ?><li><strong>Проект:</strong> <?php the_field( 'proekt' ); ?></li><?php } ?>
-                    <?php if( $proekt_link ){ ?><li><strong>Ссылка на проект:</strong> <?php the_field( 'ssylka_na_proekt' ); ?></li><?php } ?>
+                    <?php if( $project ){ ?><li><strong>Проект:</strong> <?php the_field( 'proekt' ); ?></li><?php } ?>
+                    <?php if( $project_link ){ ?><li><strong>Ссылка на проект:</strong> <?php the_field( 'ssylka_na_proekt' ); ?></li><?php } ?>
                     <?php if( $project_date ){ ?><li><strong>Дата:</strong> <?php the_field( 'data_proekta' ); ?></li><?php } ?>
                 </ul>
             </div>
