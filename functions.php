@@ -215,6 +215,33 @@ require get_template_directory() . '/inc/options-page.php';
 // For translate
 pll_register_string('Copyright', 'Copyright');
 
+//Оставить заявку
+pll_register_string('add_order', 'add_order');
+// Сайт под ключ
+pll_register_string('txt_loader_1', 'txt_loader_1');
+// Интернет-магазин
+pll_register_string('txt_loader_2', 'txt_loader_2');
+// Landing page
+pll_register_string('txt_loader_3', 'txt_loader_3');
+// Персональный блог
+pll_register_string('txt_loader_4', 'txt_loader_4');
+// Дизайн сайта
+pll_register_string('txt_loader_5', 'txt_loader_5');
+// Логотип
+pll_register_string('txt_loader_6', 'txt_loader_6');
+// UI/UX
+pll_register_string('txt_loader_7', 'txt_loader_7');
+// Мобильное приложение
+pll_register_string('txt_loader_8', 'txt_loader_8');
+// Так-же по данному номеру мы есть в Viber, WhatsApp, Telegram
+pll_register_string('modal_phone', 'modal_phone');
+// Если нет возможности говорить - всегда можно написать!
+pll_register_string('modal_mail', 'modal_mail');
+// Обратный звонок
+pll_register_string('back_call', 'back_call');
+// Обратная связь
+pll_register_string('feed_back', 'feed_back');
+
 // Отключение визуального редактора
 function disable_visual_editor($can)
 {

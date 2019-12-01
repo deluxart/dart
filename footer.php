@@ -78,7 +78,6 @@
 		</div>
 	</div>
 
-
 <div class="bg-grid">
 	<div></div>
 	<div></div>
@@ -87,8 +86,6 @@
 	<div></div>
 	<div></div>
 </div>
-
-
 
 <div class="fullscreen-modal">
 	<div class="container">
@@ -99,23 +96,23 @@
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					<div>
 						<h3><?php echo $options['phone_1'];?></h3>
-						<p>Так-же по данному номеру мы есть в Viber, WhatsApp, Telegram</p>
+						<p><?php pll_e('modal_phone','dart'); ?></p>
 					</div>
 				</div>
 				<div class="mail">
 					<i class="fa fa-envelope" aria-hidden="true"></i>
 					<div>
 						<h3><?php echo $options['email'];?></h3>
-						<p>Если нет возможности говорить - всегда можно написать!</p>
+						<p><?php pll_e('modal_mail','dart'); ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="content foot">
 				<div>
-					<a href="#" class="dart-btn">Обратный звонок <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="#" class="dart-btn"><?php pll_e('back_call','dart'); ?> <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 				<div>
-					<a href="/contacts" class="feed-link">Обратная связь <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="/contacts" class="feed-link"><?php pll_e('feed_back','dart'); ?><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
@@ -133,17 +130,12 @@
 	<div class="close">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
-		<g>
 			<path class="st0" d="M28.9,31.8L0.6,60.1c-0.8,0.8-0.8,2.1,0,2.8C1,63.4,1.5,63.6,2,63.6c0.5,0,1-0.2,1.4-0.6L32,34.4L60.5,63
 				c0.4,0.4,0.9,0.6,1.4,0.6s1-0.2,1.4-0.6c0.8-0.8,0.8-2.1,0-2.8L35.1,31.8L63.4,3.4c0.8-0.8,0.8-2.1,0-2.8c-0.8-0.8-2.1-0.8-2.8,0
 				L32,29.1L3.4,0.6c-0.8-0.8-2.1-0.8-2.8,0c-0.8,0.8-0.8,2.1,0,2.8L28.9,31.8z"/>
-		</g>
 		</svg>
 	</div>
 </div>
-
-
-
 
 <?php wp_footer(); ?>
 
