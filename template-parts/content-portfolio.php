@@ -52,7 +52,7 @@ $usluga_array = get_field( 'usluga' );
                 <ul class="details-list">
                     <?php if( $project ){ ?><li><strong>Проект:</strong>
                         <?php if( $project_link ){ ?>
-                            <a href="<?php the_field( 'ssylka_na_proekt' ); ?>" target="_blank"><?php the_field( 'proekt' ); ?>
+                            <a href="<?php the_field( 'ssylka_na_proekt' ); ?>" target="_blank"><?php the_field( 'proekt' ); ?></a>
                         <?php } else { ?>
                             <?php the_field( 'proekt' ); ?>
                         <?php } ?>
