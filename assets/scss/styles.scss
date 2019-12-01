@@ -1234,6 +1234,22 @@ footer {
                     grid-template-columns: 1fr 25%;
                     grid-gap: 50px;
 
+                    h4 {
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                        position: relative;
+
+                        &:before {
+                            position: absolute;
+                            width: 33px;
+                            height: 1px;
+                            background: #000;
+                            content: '';
+                            left: 0;
+                            bottom: -15px;
+                        }
+                    }
+
                     .details {
                         .cat-list {
                             margin-bottom: 30px;
