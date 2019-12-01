@@ -241,6 +241,8 @@ pll_register_string('modal_mail', 'modal_mail');
 pll_register_string('back_call', 'back_call');
 // Обратная связь
 pll_register_string('feed_back', 'feed_back');
+// Контакты
+pll_register_string('contacts', 'contacts');
 
 // Отключение визуального редактора
 function disable_visual_editor($can)
