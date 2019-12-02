@@ -169,7 +169,7 @@ jQuery(document).ready(function () {
 
 
 // Add slick slider
-jQuery('.home_slider').slick({
+jQuery('.home_slider_slick').slick({
     dots: true,
     infinite: true,
     speed: 300,
