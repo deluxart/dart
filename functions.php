@@ -93,6 +93,8 @@ function delux_art_scripts() {
 	wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' );
 	wp_enqueue_style( 'dart-reset', get_template_directory_uri() . '/assets/css/reset.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-glich', get_template_directory_uri() . '/assets/css/glich.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'dart-slick', get_template_directory_uri() . '/assets/css/slick.css', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'dart-slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-fa', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), wp_get_theme()->get( 'Version' ) );
     // wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
@@ -106,6 +108,7 @@ function delux_art_scripts() {
     wp_enqueue_script( 'dart-script-debug-sm', get_template_directory_uri() . '/assets/js/debug.addIndicators.min.js','','1',true);
     wp_enqueue_script( 'dart-script-wow', get_template_directory_uri() . '/assets/js/wow.min.js','','1',true);
     wp_enqueue_script( 'dart-script-paroller', get_template_directory_uri() . '/assets/js/jquery.paroller.min.js','','1',true);
+    wp_enqueue_script( 'dart-slick', get_template_directory_uri() . '/assets/js/slick.min.js','','1',true);
     // wp_enqueue_script( 'dart-modernizr-custom', get_template_directory_uri() . '/assets/js/modernizr-custom.js','','1',true);
     wp_enqueue_script( 'dart-preloader', get_template_directory_uri() . '/assets/js/preloader.js','','1',true);
     wp_enqueue_script( 'dart-scripts', get_template_directory_uri() . '/assets/js/scripts.js','','1',true);
