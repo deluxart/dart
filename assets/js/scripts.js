@@ -171,9 +171,7 @@ jQuery(document).ready(function () {
 // Add slick slider
 jQuery('.home_slider_slick').slick({
     dots: true,
-    arrows: true,
-    prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-    nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+    arrows: false,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
