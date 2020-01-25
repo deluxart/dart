@@ -22,12 +22,13 @@
 			</div>
         </div>
 
+
 <?php // metki ( value )
-$metki_array = get_field( 'metki' );
+$usluga_array = get_field( 'usluga' );
 echo '<ul>';
-if ( $metki_array ):
-    foreach ( $metki_array as $metki_item ):
-        echo '<li>'. $metki_item .'</li>';
+if ( $usluga_array ):
+    foreach ( $usluga_array as $usluga_item ):
+        echo '<li>'. $usluga_item .'</li>';
 	 	// echo $metki_item;
     endforeach;
 echo '</ul>';
