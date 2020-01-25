@@ -22,7 +22,19 @@ $usluga_array = get_field( 'usluga' );
         <?php endif; ?>
 	</header><!-- .entry-header -->
     <div class="content">
-	    <div class="cover"><?php delux_art_post_thumbnail(); ?></div>
+	    <div class="cover">
+
+<?php if ( have_rows( 'kartinki_proekta' ) ) : ?>
+	<?php while ( have_rows( 'kartinki_proekta' ) ) : the_row(); ?>
+		<?php if ( get_sub_field( 'zagruzka_izobrazheniya' ) ) { ?>
+			<img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" />
+		<?php } ?>
+	<?php endwhile; ?>
+<?php else : ?>
+	<?php // no rows found ?>
+<?php endif; ?>
+
+        </div>
         <div class="description">
 
             <div class="text">
