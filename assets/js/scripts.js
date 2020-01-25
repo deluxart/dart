@@ -5,6 +5,21 @@
         jQuery('.extended-parallax').paroller();
 // Other scripts
 
+jQuery('[data-fancybox="images"]').fancybox({
+    thumbs: {
+        autoStart: true
+    },
+    buttons: [
+        'zoom',
+        'slideShow',
+        'fullScreen',
+        'thumbs',
+        //'download',
+        //'zoom',
+        'close'
+    ]
+});
+
 // Preloader
 
 

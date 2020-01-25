@@ -28,7 +28,7 @@ $usluga_array = get_field( 'usluga' );
 	<?php while ( have_rows( 'kartinki_proekta' ) ) : the_row(); ?>
 		<?php if ( get_sub_field( 'zagruzka_izobrazheniya' ) ) { ?>
 			<!-- <a href="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" rel="lightbox"><img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" /></a> -->
-            <a id="largelink"  href="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" id="largeIink" title=""  data-fancybox="images"><img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>"  id="largeImage" /></a>
+            <a href="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" title=""  data-fancybox="images"><img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>"  id="largeImage" /></a>
 		<?php } ?>
 	<?php endwhile; ?>
 <?php else : ?>

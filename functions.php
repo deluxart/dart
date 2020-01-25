@@ -110,11 +110,10 @@ function delux_art_scripts() {
     wp_enqueue_script( 'dart-script-wow', get_template_directory_uri() . '/assets/js/wow.min.js','','1',true);
     wp_enqueue_script( 'dart-script-paroller', get_template_directory_uri() . '/assets/js/jquery.paroller.min.js','','1',true);
     wp_enqueue_script( 'dart-slick', get_template_directory_uri() . '/assets/js/slick.min.js','','1',true);
+    wp_enqueue_script( 'dart-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js','','1',true);
     // wp_enqueue_script( 'dart-modernizr-custom', get_template_directory_uri() . '/assets/js/modernizr-custom.js','','1',true);
     wp_enqueue_script( 'dart-preloader', get_template_directory_uri() . '/assets/js/preloader.js','','1',true);
     wp_enqueue_script( 'dart-scripts', get_template_directory_uri() . '/assets/js/scripts.js','','1',true);
-    wp_enqueue_script( 'dart-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js','','1',true);
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
