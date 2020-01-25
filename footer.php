@@ -138,6 +138,22 @@
 </div>
 
 <?php wp_footer(); ?>
+<script type="text/javascript">
+    jQuery('[data-fancybox="images"]').fancybox({
+      thumbs : {
+        autoStart : true
+      },
+      buttons : [
+        'zoom',
+        'slideShow',
+        'fullScreen',
+        'thumbs',
+        //'download',
+        //'zoom',
+        'close'
+      ]
+    });
+</script>
 
 </body>
 </html>
