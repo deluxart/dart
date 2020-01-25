@@ -27,7 +27,7 @@ $usluga_array = get_field( 'usluga' );
 <?php if ( have_rows( 'kartinki_proekta' ) ) : ?>
 	<?php while ( have_rows( 'kartinki_proekta' ) ) : the_row(); ?>
 		<?php if ( get_sub_field( 'zagruzka_izobrazheniya' ) ) { ?>
-			<img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" />
+			<a href="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>"><img src="<?php the_sub_field( 'zagruzka_izobrazheniya' ); ?>" /></a>
 		<?php } ?>
 	<?php endwhile; ?>
 <?php else : ?>
