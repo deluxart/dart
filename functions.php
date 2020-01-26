@@ -324,6 +324,7 @@ function portfolio_permalink( $permalink, $post ){
 
 
 
+add_filter( 'astra_single_post_navigation_enabled', '__return_false' );
 
 
 
