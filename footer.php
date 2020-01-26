@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="content">
 			<div>
-				 <strong><?php bloginfo( 'name' ); ?></strong> <?php pll_e('Copyright','dart'); ?>
+				 <strong><?php bloginfo( 'name' ); ?></strong> <?php pll_e('Copyright','dart'); ?> © <?php echo date("Y"); ?>
 			</div>
 			<div>
 				<ul>
