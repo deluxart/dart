@@ -351,6 +351,10 @@ echo '</div>';
 	return $out;
 }
 
+
+
+
+
 add_shortcode('portfolio-mini', 'my_shortcode_function_mini');
 function my_shortcode_function_mini() {
 	global $wp_query;
