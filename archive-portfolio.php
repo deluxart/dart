@@ -6,48 +6,22 @@
  *
  * @package delux-art
  */
-
 get_header();
+$page_description = get_field( 'page_description' );
 ?>
 
-	<div id="primary" class="content-area arch-portfolio">
-		<main id="main" class="site-main">
+	<section id="portfolio" class="content-area page">
+		<div class="container">
+		<h2 class="title wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.5s"><?php the_title(); ?>
+        <?php if ( $page_description ): ?>
+            <span><?php the_field( 'page_description' ); ?></span>
+        <?php endif; ?>
+        </h2>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                <?php the_content(); ?>
+        </div><!-- #main -->
+        	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
+	</section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
