@@ -324,6 +324,7 @@ function portfolio_permalink( $permalink, $post ){
 
 
 
+add_shortcode('portfolio', 'my_shortcode_function');
 function my_shortcode_function() {
     $wp_query = new WP_Query( [
       'post_type'      => 'portfolio',
