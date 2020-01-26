@@ -346,8 +346,8 @@ echo '<div class="portfolio">';
 	    endif;
 echo '</div>';
 
-	posts_nav_link(); // пагинация - echo тут не надо
-	wp_reset_query(); // сброс $wp_query
+	wp_pagenavi( array( 'query' => $wp_query ) ); // пагинация - echo тут не надо
+	wp_reset_postdata(); // сброс $wp_query
 	$out = ob_get_clean();
 	return $out;
 }
