@@ -13,13 +13,17 @@ $page_description = get_field( 'page_description' );
 	<section id="portfolio" class="content-area page">
 		<div class="container">
 
-		<?php if ( have_posts() ) : ?>
 
-		<h2 class="title wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.5s"><?php the_title(); ?>
+		<h2 class="title wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.5s">Портфолио
         <?php if ( $page_description ): ?>
             <span><?php the_field( 'page_description' ); ?></span>
         <?php endif; ?>
         </h2>
+
+
+
+
+		<?php if ( have_posts() ) : ?>
 
 			<?php
 			/* Start the Loop */
