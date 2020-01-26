@@ -326,14 +326,13 @@ function portfolio_permalink( $permalink, $post ){
 
 add_shortcode('portfolio', 'my_shortcode_function');
 function my_shortcode_function() {
-    global $wp_query;
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	global $wp_query;
 	$wp_query = new WP_Query(array(
 		// 'category_name' => 'portfolio',
 		'post_type' => 'portfolio',
 		'posts_per_page' => '6',
-		'paged' => $paged
-    ));
+		'paged' => get_query_var('paged') ?: 1
+	));
 ob_start();
 echo '<div class="portfolio">';
 	if ( have_posts() ) :
@@ -346,7 +345,6 @@ echo '<div class="portfolio">';
 	        get_template_part( 'template-parts/content', 'none' );
 	    endif;
 echo '</div>';
-
 
     // posts_nav_link();
     wp_pagenavi( array( 'query' => $wp_query ) ); // пагинация - echo тут не надо
