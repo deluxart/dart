@@ -324,6 +324,11 @@ function portfolio_permalink( $permalink, $post ){
 
 
 
+
+
+
+
+
 add_shortcode('portfolio', 'my_shortcode_function');
 function my_shortcode_function() {
     $wp_query = new WP_Query( [
@@ -342,11 +347,22 @@ function my_shortcode_function() {
     endif;
     echo '</div>';
 
-    posts_nav_link();
+    // posts_nav_link();
     $out = ob_get_clean();
 
     return $out;
   }
+
+
+
+
+
+
+
+
+
+
+
 
 add_shortcode('portfolio-mini', 'my_shortcode_function_mini');
 function my_shortcode_function_mini() {
