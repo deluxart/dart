@@ -29,28 +29,5 @@ $page_description = get_field( 'page_description' );
         	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
 	</section><!-- #primary -->
 
-
-
-
-<?php
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args = array( 'paged' => $paged ,'post_type' => 'portfolio', 'posts_per_page' => '6' );
-
-$loop = new WP_Query( $args );
-while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-<?php the_content(); ?>
-
-<?php
-endwhile;
-wp_pagenavi( array( 'query' => $loop ) );
-wp_reset_postdata(); ?>
-
-
-
-
-
-
-
 <?php
 get_footer();
