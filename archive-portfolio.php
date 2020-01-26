@@ -22,7 +22,7 @@ $page_description = get_field( 'page_description' );
 
 
 
-
+<div class="portfolio">
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -47,12 +47,11 @@ $page_description = get_field( 'page_description' );
 
 		endif;
 		?>
-
+</div>
         </div><!-- #main -->
         	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
 	</section><!-- #primary -->
 
 
 <?php
-get_sidebar();
 get_footer();
