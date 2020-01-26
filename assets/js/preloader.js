@@ -14,8 +14,8 @@ var preloader = {
 };
 
 jQuery(document).ready(function() {
-    // if (preloader.enabled && typeof deluxart.functions.cookieGet('cached') === 'undefined') {
-    if (preloader.enabled) {
+    if (preloader.enabled && typeof deluxart.functions.cookieGet('cached') === 'undefined') {
+    // if (preloader.enabled) {
 		(function() {
 			var block = jQuery('.dart-preloader');
 			var items = block.find('.dart-preloader-item');
@@ -56,9 +56,9 @@ jQuery(document).ready(function() {
 			}
 		})();
 	}
-	else {
-		// preloader.functions.finish();
-	}
+    else {
+        preloader.functions.finish();
+    }
 });
 
 jQuery(window).on('load', function() {
