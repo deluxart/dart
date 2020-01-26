@@ -345,15 +345,12 @@ echo '<div class="portfolio">';
 	        get_template_part( 'template-parts/content', 'none' );
 	    endif;
 echo '</div>';
-    posts_nav_link(); // пагинация - echo тут не надо
+
+	posts_nav_link(); // пагинация - echo тут не надо
 	wp_reset_query(); // сброс $wp_query
 	$out = ob_get_clean();
 	return $out;
 }
-
-
-
-
 
 add_shortcode('portfolio-mini', 'my_shortcode_function_mini');
 function my_shortcode_function_mini() {
