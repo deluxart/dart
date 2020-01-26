@@ -324,33 +324,28 @@ function portfolio_permalink( $permalink, $post ){
 
 
 
-add_shortcode('portfolio', 'my_shortcode_function');
 function my_shortcode_function() {
-	global $wp_query;
-	$wp_query = new WP_Query(array(
-		// 'category_name' => 'portfolio',
-		'post_type' => 'portfolio',
-		'posts_per_page' => '6',
-		'paged' => get_query_var('paged') ?: 1
-	));
-ob_start();
-echo '<div class="portfolio">';
-	if ( have_posts() ) :
-	        while ( have_posts() ) : the_post();
+    $wp_query = new WP_Query( [
+      'post_type'      => 'portfolio',
+      'posts_per_page' => 6,
+      'paged'          => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1
+    ] );
+    ob_start();
+    echo '<div class="portfolio">';
+    if ( $wp_query->have_posts() ) :
+      while ( $wp_query->have_posts() ) : $wp_query->the_post();
+        get_template_part( 'template-parts/portfolio', get_post_format() );
+      endwhile;
+    else :
+      get_template_part( 'template-parts/content', 'none' );
+    endif;
+    echo '</div>';
 
-	            get_template_part( 'template-parts/portfolio', get_post_format() );
+    posts_nav_link();
+    $out = ob_get_clean();
 
-	        endwhile;
-	    else :
-	        get_template_part( 'template-parts/content', 'none' );
-	    endif;
-echo '</div>';
-
-	posts_nav_link(); // пагинация - echo тут не надо
-	wp_reset_query(); // сброс $wp_query
-	$out = ob_get_clean();
-	return $out;
-}
+    return $out;
+  }
 
 add_shortcode('portfolio-mini', 'my_shortcode_function_mini');
 function my_shortcode_function_mini() {
