@@ -49,7 +49,7 @@ $page_description = get_field( 'page_description' );
 		?>
 </div>
 <div class="pagination">
-<?php wp_pagenavi(); ?>
+    <?php wp_pagenavi(); ?>
 </div>
         </div><!-- #main -->
         	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>

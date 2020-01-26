@@ -12,7 +12,30 @@ body {
 
 	&.full-modal {
 		overflow: hidden;
-	}
+    }
+
+    &.post-type-archive-portfolio {
+        nav {
+            &.navigation {
+                &.posts-navigation {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+        border: 1px solid #f3f3f3;
+        padding: 4px 8px;
+        font-size: 14px;
+        color: #8c8c8c;
+}
+
+.wp-pagenavi a:hover, .wp-pagenavi span.current {
+    background: $orange;
+    border-color: $orange;
+    color: #fff;
 }
 
 .bg-grid {
