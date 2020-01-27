@@ -2,69 +2,6 @@ $orange: #ffc000;
 $orangeHover: #ffd111;
 
 
-
-
-.wpcf7-checkbox, .radio {
-    display: inline;
-    margin: 10px 0 0;
-
-    .wpcf7-list-item {
-      display: inline-block;
-
-      input[type=checkbox], input[type=radio] {
-        display: none;
-
-        &:checked + .wpcf7-list-item-label::before {
-          content: "\f0c8";
-          color: $orange;
-          font-size: 12px;
-          font-family: FontAwesome;
-          font-style: normal;
-          font-weight: normal;
-          line-height: 14px;
-          text-decoration: inherit;
-          text-align: center;
-        }
-      }
-    }
-
-    .wpcf7-list-item-label {
-      display: inline-block;
-      font-size: 14px;
-      font-weight: normal;
-      left: 15px;
-      line-height: 14px;
-      margin: 0 0 15px;
-      position: relative;
-
-      &::before {
-        background: #fff;
-        border: 1px solid $orange;
-        border-radius: 3px;
-        content: "";
-        height: 15px;
-        left: -22px;
-        position: absolute;
-        width: 15px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-
-  .radio {
-    .wpcf7-list-item-label {
-      &::before {
-        border-radius: 100%;
-      }
-    }
-  }
-
-
-
-
 * {
 	margin: 0;
 	padding: 0;
