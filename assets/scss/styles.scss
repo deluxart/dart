@@ -2,6 +2,19 @@ $orange: #ffc000;
 $orangeHover: #ffd111;
 
 
+#wpcf7-f299-p54-o1 {
+    input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+        width: 100%;
+    }
+}
+
+
+.columns-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
 
 .wpcf7-checkbox, .radio {
     display: inline;
