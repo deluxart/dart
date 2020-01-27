@@ -8,7 +8,8 @@ $orangeHover: #ffd111;
     margin: 10px 0 0;
 
     .wpcf7-list-item {
-      display: inline-block;
+      display: block;
+      margin: 0;
 
       input[type=checkbox], input[type=radio] {
         display: none;
