@@ -1,6 +1,10 @@
 $orange: #ffc000;
 $orangeHover: #ffd111;
 
+* {
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -62,13 +66,6 @@ $orangeHover: #ffd111;
     }
   }
 
-
-
-
-* {
-	margin: 0;
-	padding: 0;
-}
 
 body {
 	position: relative;
