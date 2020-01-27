@@ -1,11 +1,6 @@
 $orange: #ffc000;
 $orangeHover: #ffd111;
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
 
 
 .wpcf7-checkbox, .radio {
@@ -66,6 +61,10 @@ $orangeHover: #ffd111;
     }
   }
 
+* {
+	margin: 0;
+	padding: 0;
+}
 
 body {
 	position: relative;
