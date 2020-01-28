@@ -192,3 +192,7 @@ jQuery('.home_slider_slick').slick({
     slidesToShow: 1,
     slidesToScroll: 1
 });
+
+
+// Antispam CF7
+jQuery('.agree').prop('checked', false);
