@@ -7,7 +7,7 @@ $orangeHover: #ffd111;
         width: 100%;
         background: #eef2f7;
         border: 1px solid #eef2f7;
-        padding: 20px;
+        padding: 15px;
     }
 }
 
@@ -17,6 +17,19 @@ $orangeHover: #ffd111;
         &.in-title {
             color: #9299a2;
             font-size: 13px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+    }
+
+    label {
+        &.colls-2 {
+            .wpcf7-form-control {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 30px;
+            }
         }
     }
 }
@@ -43,15 +56,17 @@ $orangeHover: #ffd111;
         display: none;
 
         &:checked + .wpcf7-list-item-label::before {
-          content: "\f0c8";
-          color: $orange;
-          font-size: 12px;
+          content: "\f00c";
+          color: #333;
+          font-size: 18px;
           font-family: FontAwesome;
           font-style: normal;
           font-weight: normal;
-          line-height: 13px;
+          line-height: 20px;
           text-decoration: inherit;
           text-align: center;
+          border: 1px solid $orange;
+            background: $orange;
         }
       }
     }
@@ -64,17 +79,19 @@ $orangeHover: #ffd111;
       line-height: 14px;
       margin: 0 0 15px;
       position: relative;
-      padding-left: 22px;
+      padding-left: 32px;
 
       &::before {
         background: #fff;
-        border: 1px solid $orange;
+        border: 1px solid #ced5dd;
         border-radius: 3px;
         content: "";
-        height: 15px;
+        height: 24px;
         left: 0;
         position: absolute;
-        width: 15px;
+        width: 24px;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       &:hover {
