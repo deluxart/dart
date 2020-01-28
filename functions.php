@@ -97,7 +97,7 @@ function delux_art_scripts() {
     wp_enqueue_style( 'dart-slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-fa', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), wp_get_theme()->get( 'Version' ) );
     // wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), wp_get_theme()->get( 'Version' ) );
-    wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/css/styles.css?1', array(), wp_get_theme()->get( 'Version' ) );
+    wp_enqueue_style( 'dart-basic-styles', get_template_directory_uri() . '/css/styles.css?10', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-animate', get_template_directory_uri() . '/assets/css/animate.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-menu', get_template_directory_uri() . '/css/dart-menu.css', array(), wp_get_theme()->get( 'Version' ) );
     wp_enqueue_style( 'dart-fancybox', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css', array(), wp_get_theme()->get( 'Version' ) );
@@ -426,20 +426,20 @@ add_filter( 'comment_form_default_fields', 'add_antispam_field_to_comment_form' 
 add_filter( 'comment_form_fields', 'add_antispam_field_to_comment_form' );
 function add_antispam_field_to_comment_form($fields) { //Эта функция добавляем поле с именем csrf в форму
     $fields['csrf'] = '
-	<input type="text" name="csrf" required style="display:none"> //добавляем само поле
-	<script>document.getElementsByName("csrf")[0].value="'.time().'"</script> //заполняем его текущей меткой времени через Javascript
+	<input type="text" name="csrf" required style="display:none">
+	<script>document.getElementsByName("csrf")[0].value="'.time().'"</script>
 	';
     return $fields;
 }
 
 add_action( 'pre_comment_on_post', 'action_check_hidden_field' );
-function action_check_hidden_field( $comment_post_ID ){ //Функция проверяет прошло ли Х секунд с между моментом отрисовки страницы и отправкой комментария.
-	$human_pause = 30; //это и есть Х., т.е. в данном случае Х = 30 секунд
-	if (!isset($_POST['csrf']) || ((time() - intval($_POST['csrf'])) < $human_pause) || !preg_match('/\d{10}/',$_POST['csrf'])) { //Если поле пришло пустое, коммент запостили раньше чем через Х секунд, или в коменте пришла какая то ерунда, а не метка времени ...
-		wp_die('Service Unavailable','Service Unavailable', 503); // .. то покажем ошибку и коммент не запостим
+function action_check_hidden_field( $comment_post_ID ){
+	$human_pause = 30;
+	if (!isset($_POST['csrf']) || ((time() - intval($_POST['csrf'])) < $human_pause) || !preg_match('/\d{10}/',$_POST['csrf'])) {
+		wp_die('Service Unavailable','Service Unavailable', 503);
 	}
 }
 //Опционально, можно не вставлять.
 function remove_form_novalidate() {
-    remove_theme_support( 'html5' ); //уберем поддержку html5 в нашей теме, чтоб снизить нагрузку на хостинг, в случае если спам-агрегат работает через свой браузер - он не даст ему отправить комментарий и он даже не дойдет до обработчика
+    remove_theme_support( 'html5' );
 }
