@@ -28,7 +28,7 @@ $orangeHover: #ffd111;
             .wpcf7-form-control {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-gap: 30px;
+                grid-column-gap: 30px;
             }
         }
     }
