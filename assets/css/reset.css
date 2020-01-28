@@ -3,7 +3,8 @@
 body.admin-bar header#header { top: 32px; }
 body.page-id-60 #header .container > .head-btn { display: none; }
 .agree {display:none}
-
+.inv-recaptcha-holder {
+     position: absolute !important; visibility: hidden; }
 @media (min-width: 768px) {
     body.page-id-60 header#header { padding: 27px 0; }
 }
