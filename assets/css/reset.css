@@ -15,7 +15,7 @@ video { display: block; }
 button:focus { outline: none; }
 
 .wpcf7-form .wpcf7-response-output.wpcf7-validation-errors { display: none !important; }
-.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok { color: #4F8A10; background-color: #DFF2BF; border: 0; font-size: 14px; padding: 10px !important;
+.wpcf7-form .wpcf7-response-output.wpcf7-mail-sent-ok { color: #4F8A10; background-color: #DFF2BF; border: 0; font-size: 14px; padding: 11px !important;
     display: grid !important; grid-template-columns: auto 1fr; grid-column-gap: 14px; align-items: center; position: absolute !important; bottom: 0; margin: 0; width: 100%; left: 0; }
 div.wpcf7-mail-sent-ok:before,div.wpcf7-validation-errors:before { font: 21px/30px FontAwesome; }
 div.wpcf7-mail-sent-ok:before { content:'\f00c'; }
