@@ -14,8 +14,9 @@ $orangeHover: #ffd111;
         &.in-title {
             color: #767b82;
             font-size: 13px;
-            display: inline-block;
-            margin-bottom: 0px;
+			display: inline-block;
+			margin-top: 20px;
+            margin-bottom: 5px;
             font-weight: 300;
         }
     }
@@ -35,11 +36,25 @@ $orangeHover: #ffd111;
 	}
 
 	& > p {
-		margin: 20px;
+		margin: 0px 0;
+
+		&:first-child {
+			label {
+				span {
+					&.in-title {
+						margin-top: 0;;
+					}
+				}
+			}
+		}
 	}
 
 	.wpcf7-checkbox, .radio {
 		margin: 0;
+	}
+
+	.dart-btn {
+		margin-top: 20px;
 	}
 }
 
