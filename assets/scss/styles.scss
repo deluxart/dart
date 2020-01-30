@@ -141,6 +141,11 @@ $orangeHover: #ffd111;
 	padding: 0;
 }
 
+
+@media (max-width: 992px) {
+	.brief-form div.colls-2 .wpcf7-form-control, .columns-2 { grid-template-columns: 1fr; }
+}
+
 body {
 	position: relative;
 
