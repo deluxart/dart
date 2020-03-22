@@ -25,9 +25,6 @@ $page_description = get_field( 'page_description' );
         </h2>
 
                 <?php the_content(); ?>
-
-
-                <?php echo do_shortcode('[ajax_load_more post_type="post, portfolio" scroll="false"]'); ?>
         </div><!-- #main -->
         	<div class="extended-parallax" data-paroller-type="foreground" style="top:0%; left: -5%; " data-paroller-direction="horizontal" data-paroller-factor="-0.1" ><img src="<?php echo get_bloginfo('template_url'); ?>/assets/images/Portfolio.svg" alt="" /></div>
 	</section><!-- #primary -->
