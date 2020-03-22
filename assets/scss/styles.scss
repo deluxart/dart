@@ -2,6 +2,11 @@ $orange: #ffc000;
 $orangeHover: #ffd111;
 
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .wpcf7 {
     position: relative;
 }
@@ -9,7 +14,6 @@ $orangeHover: #ffd111;
 .brief-form {
     input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
         width: 100%;
-        // background: #f2f4f7;
         border: 1px solid #d6dce3;
         padding: 15px;
 	}
@@ -135,12 +139,6 @@ $orangeHover: #ffd111;
       }
     }
   }
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
 
 @media (max-width: 992px) {
 	.brief-form div.colls-2 .wpcf7-form-control, .columns-2 { grid-template-columns: 1fr; }
