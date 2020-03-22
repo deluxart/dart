@@ -651,11 +651,9 @@ header {
 	/*background: #000;*/
 	background: url(../assets/images/bg_services.jpg) center no-repeat;
     background-size: cover;
-
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-
     margin-bottom: 30px;
 
     &:before {
@@ -666,6 +664,33 @@ header {
 	    width: 100%;
 	    height: 100%;
 	    background: #000000e0;
+    }
+
+    &.services-page {
+        background: none;
+
+        &:before {
+            display: none;
+
+            .container {
+                .content {
+                    h3 {
+                        color: #000;
+                    }
+
+                    & > div {
+                        ul {
+                            li {
+                                a {
+                                    color: #000;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 	.container {
