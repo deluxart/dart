@@ -185,7 +185,7 @@ jQuery(document).ready(function () {
 
 // Add slick slider
 jQuery('.home_slider_slick').slick({
-    dots: true,
+    dots: false,
     arrows: false,
     infinite: true,
     speed: 300,
