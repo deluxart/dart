@@ -182,6 +182,9 @@ jQuery(document).ready(function () {
     });
 });
 
+// Antispam CF7
+jQuery('.agree').prop('checked', false);
+
 
 // Add slick slider
 jQuery('.home_slider_slick').slick({
@@ -192,7 +195,3 @@ jQuery('.home_slider_slick').slick({
     slidesToShow: 1,
     slidesToScroll: 1
 });
-
-
-// Antispam CF7
-jQuery('.agree').prop('checked', false);
