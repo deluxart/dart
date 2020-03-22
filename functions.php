@@ -394,13 +394,20 @@ echo '</div>';
 
 
 // Чистим от муосра добявляемого WP
-function remove_wpautop(){
-   $pages = array(66);
-   if (is_page($pages)){
-      remove_filter('the_content', 'wpautop');
-   }
+// function remove_wpautop(){
+//    $pages = array(66);
+//    if (is_page($pages)){
+//       remove_filter('the_content', 'wpautop');
+//    }
+// }
+// add_action('wp_head', 'remove_wpautop');
+function remove_p_on_pages() {
+    if ( is_page() ) {
+        remove_filter( 'the_content', 'wpautop' );
+        remove_filter( 'the_excerpt', 'wpautop' );
+    }
 }
-add_action('wp_head', 'remove_wpautop');
+add_action( 'wp_head', 'remove_p_on_pages' );
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
