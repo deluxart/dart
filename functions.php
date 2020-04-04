@@ -450,3 +450,6 @@ function action_check_hidden_field( $comment_post_ID ){
 function remove_form_novalidate() {
     remove_theme_support( 'html5' );
 }
+
+// Disable scaling images
+add_filter( 'big_image_size_threshold', '__return_false' );
