@@ -379,7 +379,7 @@ echo '<div class="portfolio">';
 	if ( have_posts() ) :
 	        while ( have_posts() ) : the_post();
 
-	            get_template_part( 'template-parts/portfolio', get_post_format() );
+	            get_template_part( 'template-parts/portfolio_home', get_post_format() );
 
 	        endwhile;
 	    else :
