@@ -874,7 +874,10 @@ body {
 						width: 100%;
 						line-height: normal;
 						opacity: 0;
-						transition: 0.1s all;
+                        transition: 0.1s all;
+                        display: grid;
+                        align-items: end;
+                        text-align: left;
 
 						& > div {
 							padding: 20px;
@@ -883,11 +886,24 @@ body {
 						h4 {
 							font-size: 30px;
 							color: $orange;
-							font-weight: bold;
+                            font-weight: bold;
+                            display: inline-block;
+                            border-bottom: 4px solid $orange;
 						}
 
 						p {
-							font-weight: 100;
+                            font-weight: 100;
+                            position: relative;
+                            padding-top: 15px;
+
+                            &:before {
+                                content: '';
+                                top: 0;
+                                height: 1px;
+                                width: 100%;
+                                background: #ffc000;
+                                position: absolute;
+                            }
 						}
 					}
 
