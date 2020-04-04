@@ -786,6 +786,20 @@ header {
 }
 
 
+body {
+    &.home {
+        #portfolio {
+            .container {
+                .portfolio {
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 30px;
+                }
+            }
+        }
+    }
+}
+
+
 #portfolio {
 	text-align: center;
     position: relative;
@@ -881,7 +895,7 @@ header {
 
 						.datails {
 							opacity: 1;
-							max-width: 376px;
+							max-width: 100%;
 							left: 50%;
 							transform: translateX(-50%);
 						}
@@ -1573,7 +1587,21 @@ footer {
 	#home_slider h1 { font-size: 18px; margin-bottom: 12px; padding: 0 20px; }
 	#home_slider .da_glich { font-size: 26px; line-height: 32px; width: 138px; }
 
-	#services .container .desc { left: auto; right: -50px; bottom: auto; top: 109px; }
+    #services .container .desc { left: auto; right: -50px; bottom: auto; top: 109px; }
+
+    body {
+        &.home {
+            #portfolio {
+                .container {
+                    .portfolio {
+                        grid-template-columns: 1fr;
+                        grid-gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 @media (max-width: 540px) {
