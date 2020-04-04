@@ -793,6 +793,10 @@ body {
                 .portfolio {
                     grid-template-columns: 1fr 1fr;
                     grid-gap: 30px;
+
+                    & > div {
+                        max-width: 100%;
+                    }
                 }
             }
         }
