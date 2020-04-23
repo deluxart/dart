@@ -702,7 +702,28 @@ header {
 		.content {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			padding: 0 80px;
+            padding: 0 80px;
+
+            .title_desc {
+                position: relative;
+                & > span {
+                    position: absolute;
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 10px;
+                    right: 70px;
+
+                    &:before {
+                        position: absolute;
+                        left: -24px;
+                        content: '';
+                        width: 18px;
+                        height: 1px;
+                        background: #fff;
+                        top: 50%;
+                    }
+                }
+            }
 
 			h3 {
 				color: #fff;
