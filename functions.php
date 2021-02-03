@@ -322,12 +322,7 @@ function portfolio_permalink( $permalink, $post ){
 	return str_replace('%portfoliocat%', $term_slug, $permalink );
 }
 
-
-
 add_filter( 'astra_single_post_navigation_enabled', '__return_false' );
-
-
-
 
 
 add_shortcode('portfolio', 'my_shortcode_function');
@@ -353,17 +348,6 @@ function my_shortcode_function() {
 
     return $out;
   }
-
-
-
-
-
-
-
-
-
-
-
 
 add_shortcode('portfolio-mini', 'my_shortcode_function_mini');
 function my_shortcode_function_mini() {
@@ -394,13 +378,6 @@ echo '</div>';
 
 
 // Чистим от муосра добявляемого WP
-// function remove_wpautop(){
-//    $pages = array(66);
-//    if (is_page($pages)){
-//       remove_filter('the_content', 'wpautop');
-//    }
-// }
-// add_action('wp_head', 'remove_wpautop');
 function remove_p_on_pages() {
     if ( is_page() ) {
         remove_filter( 'the_content', 'wpautop' );
@@ -453,3 +430,14 @@ function remove_form_novalidate() {
 
 // Disable scaling images
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+
+// Add theme url shortcode
+add_shortcode('theme_url', 'da_theme_uri_shortcode' );
+function da_theme_uri_shortcode( $attrs = array (), $content = '' )
+{
+    $theme_uri = is_child_theme()
+        ? get_stylesheet_directory_uri()
+        : get_template_directory_uri();
+    return trailingslashit( $theme_uri );
+}
